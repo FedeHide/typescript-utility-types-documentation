@@ -4,12 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <script defer src="index.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <title>TypeScript Utility Types</title>
 </head>
 <body class="grid-container">
+    <!-- <div class="darkmode-box">
+        <input type="checkbox" name="" id="darkmode-toggle">
+        <label class="darkmode-label" for="darkmode-toggle"></label>
+    </div> -->
     <nav id="navbar">
         <div class="header-container">
             <div class="title">
@@ -82,14 +87,14 @@
     <div class="divider"></div>
     <main id="main-doc">
         <section class="main-section" id="Awaited">
-            <header><code>Awaited&lt;Type&gt;</code></header>
+            <header><code class="header-code" >Awaited&lt;Type&gt;</code></header>
             <article>
-                <p>This type is meant to model operations like <code>await</code> in <code>async</code> functions, or the <code>then()</code> method on <code>Promises</code> - specifically, the way that they recursively unwrap <code>Promises</code>.</p>
+                <p>This type is meant to model operations like <code class="header-code">await</code> in <code class="header-code">async</code> functions, or the <code class="header-code">then()</code> method on <code class="header-code">Promises</code> - specifically, the way that they recursively unwrap <code class="header-code">Promises</code>.</p>
                 <p class="example">example</p>
                 <section>
                     <pre>
                         <code>
-const http = require('node:http');
+                            const http = require('node:http');
 const hostname = '127.0.0.1';
 const port = 3000;
 const server = http.createServer((req, res) => {
@@ -106,7 +111,7 @@ server.listen(port, hostname, () => {
             </article>
         </section>
         <section class="main-section" id="Partial">
-            <header><code>Partial&lt;Type&gt;</code></header>
+            <header><code class="header-code" >Partial&lt;Type&gt;</code></header>
             <article>
                 <p></p>
                 <section>
@@ -117,7 +122,7 @@ server.listen(port, hostname, () => {
             </article>
         </section>
         <section class="main-section" id="Required">
-            <header><code>Required&lt;Type&gt;</code></header>
+            <header><code class="header-code" >Required&lt;Type&gt;</code></header>
             <article>
                 <p></p>
                 <section>
@@ -128,7 +133,7 @@ server.listen(port, hostname, () => {
             </article>
         </section>
         <section class="main-section" id="Readonly">
-            <header><code>Readonly&lt;Type&gt;</code></header>
+            <header><code class="header-code" >Readonly&lt;Type&gt;</code></header>
             <article>
                 <p></p>
                 <section>
@@ -139,7 +144,7 @@ server.listen(port, hostname, () => {
             </article>
         </section>
         <section class="main-section" id="Record">
-            <header><code>Record&lt;Keys, Type&gt;</code></header>
+            <header><code class="header-code" >Record&lt;Keys, Type&gt;</code></header>
             <article>
                 <p></p>
                 <section>
@@ -150,7 +155,7 @@ server.listen(port, hostname, () => {
             </article>
         </section>
         <section class="main-section" id="Pick">
-            <header><code>Pick&lt;Type, Keys&gt;</code></header>
+            <header><code class="header-code" >Pick&lt;Type, Keys&gt;</code></header>
             <article>
                 <p></p>
                 <section>
@@ -161,7 +166,7 @@ server.listen(port, hostname, () => {
             </article>
         </section>
         <section class="main-section" id="Omit">
-            <header><code>Omit&lt;Type, Keys&gt;</code></header>
+            <header><code class="header-code" >Omit&lt;Type, Keys&gt;</code></header>
             <article>
                 <p></p>
                 <section>
@@ -172,7 +177,7 @@ server.listen(port, hostname, () => {
             </article>
         </section>
         <section class="main-section" id="Exclude">
-            <header><code>Exclude&lt;UnionType, ExcludedMembers&gt;</code></header>
+            <header><code class="header-code" >Exclude&lt;UnionType, ExcludedMembers&gt;</code></header>
             <article>
                 <p></p>
                 <section>
@@ -183,7 +188,7 @@ server.listen(port, hostname, () => {
             </article>
         </section>
         <section class="main-section" id="Extract">
-            <header><code>Extract&lt;Type, Union&gt;</code></header>
+            <header><code class="header-code" >Extract&lt;Type, Union&gt;</code></header>
             <article>
                 <p></p>
                 <section>
@@ -194,7 +199,7 @@ server.listen(port, hostname, () => {
             </article>
         </section>
         <section class="main-section" id="NonNullable">
-            <header><code>NonNullable&lt;Type&gt;</code></header>
+            <header><code class="header-code" >NonNullable&lt;Type&gt;</code></header>
             <article>
                 <p></p>
                 <section>
@@ -205,7 +210,7 @@ server.listen(port, hostname, () => {
             </article>
         </section>
         <section class="main-section" id="Parameters">
-            <header><code>Parameters&lt;Type&gt;</code></header>
+            <header><code class="header-code" >Parameters&lt;Type&gt;</code></header>
             <article>
                 <p></p>
                 <section>
@@ -216,7 +221,7 @@ server.listen(port, hostname, () => {
             </article>
         </section>
         <section class="main-section" id="ConstructorParameters">
-            <header><code>ConstructorParameters&lt;Type&gt;</code></header>
+            <header><code class="header-code" >ConstructorParameters&lt;Type&gt;</code></header>
             <article>
                 <p></p>
                 <section>
@@ -227,7 +232,7 @@ server.listen(port, hostname, () => {
             </article>
         </section>
         <section class="main-section" id="ReturnType">
-            <header><code>ReturnType&lt;Type&gt;</code></header>
+            <header><code class="header-code" >ReturnType&lt;Type&gt;</code></header>
             <article>
                 <p></p>
                 <section>
@@ -238,7 +243,7 @@ server.listen(port, hostname, () => {
             </article>
         </section>
         <section class="main-section" id="InstanceType">
-            <header><code>InstanceType&lt;Type&gt;</code></header>
+            <header><code class="header-code" >InstanceType&lt;Type&gt;</code></header>
             <article>
                 <p></p>
                 <section>
@@ -249,7 +254,7 @@ server.listen(port, hostname, () => {
             </article>
         </section>
         <section class="main-section" id="ThisParameterType">
-            <header><code>ThisParameterType&lt;Type&gt;</code></header>
+            <header><code class="header-code" >ThisParameterType&lt;Type&gt;</code></header>
             <article>
                 <p></p>
                 <section>
@@ -260,7 +265,7 @@ server.listen(port, hostname, () => {
             </article>
         </section>
         <section class="main-section" id="OmitThisParameter">
-            <header><code>OmitThisParameter&lt;Type&gt;</code></header>
+            <header><code class="header-code" >OmitThisParameter&lt;Type&gt;</code></header>
             <article>
                 <p></p>
                 <section>
@@ -271,7 +276,7 @@ server.listen(port, hostname, () => {
             </article>
         </section>
         <section class="main-section" id="ThisType">
-            <header><code>ThisType&lt;Type&gt;</code></header>
+            <header><code class="header-code" >ThisType&lt;Type&gt;</code></header>
             <article>
                 <p></p>
                 <section>
@@ -283,12 +288,15 @@ server.listen(port, hostname, () => {
         </section>
         <section class="main-section" id="Intrinsic_String_Manipulation_Types">
             <header>Intrinsic String Manipulation Types</header>
-            <header><code>Uppercase&lt;StringType&gt;</code></header>
-            <header><code>Lowercase&lt;StringType&gt;</code></header>
-            <header><code>Capitalize&lt;StringType&gt;</code></header>
-            <header><code>Uncapitalize&lt;StringType&gt;</code></header>
+            <header><code class="header-code last" >Uppercase&lt;StringType&gt;</code></header>
+            <header><code class="header-code last" >Lowercase&lt;StringType&gt;</code></header>
+            <header><code class="header-code last" >Capitalize&lt;StringType&gt;</code></header>
+            <header><code class="header-code last" >Uncapitalize&lt;StringType&gt;</code></header>
             <p></p>
         </section>
     </main>
+    <div id="darkmode-container">
+        <div class="toggle"></div>
+    </div>
 </body>
 </html>
