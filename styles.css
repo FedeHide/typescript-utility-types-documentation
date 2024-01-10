@@ -16,10 +16,12 @@ html {
     text-rendering: optimizeLegibility;
 }
 
-body {
+.grid-container {
     font-size: 62.5%;
     font-family: 'Inter', sans-serif;
-    transition: background-color 0.5s ease;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
 }
 
 code {
@@ -30,9 +32,76 @@ code {
     justify-content: center;
     text-align: center;
     width: 200px;
-    height: 100px;
+    height: 1000px;
     white-space: pre-line;
     word-break: normal;
     word-wrap: normal;
+}
 
+
+/* navbar */
+
+.header-container {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+}
+
+
+header, h1 {
+    font-size: 1.8rem;
+    font-weight: 500;
+    text-align: left;
+}
+
+h1 {
+    padding-left: 5px;
+}
+
+#navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    margin: 0 0 20px 0;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+li {
+    width: max-content;
+    margin-left: 10px;
+    font-size: 1.2rem;
+}
+
+a {
+    display: block;
+    padding: 10px 30px;
+    text-decoration: none;
+    cursor: pointer;
+    color: #43853d;
+}
+
+a:hover {
+    background-color: #43853d;
+    color: #fff;
+    border-radius: 5px;
+}
+
+a:active {
+    background-color: #026e00;
+    color: #fff;
+} 
+
+
+/* divider */
+
+.divider {
+    width: 300px;
 }
