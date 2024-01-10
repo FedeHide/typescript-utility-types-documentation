@@ -1,6 +1,8 @@
-/* :root {
-
-} */
+:root {
+    --section-codeColor: #2e3440;
+    --span-codeColor: #f7f7f7;
+    --border-codeColor: #dddada;
+}
 
 * {
     margin: 0;
@@ -20,22 +22,25 @@ html {
     font-size: 62.5%;
     font-family: 'Inter', sans-serif;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    justify-items: center;
+    grid-template-columns: 400px 1fr;
+    justify-items: start;
 }
 
-code {
+header code,
+h2 code {
     display: flex;
     border-radius: 10px;
-    background-color: #f7f7f7;
+    background-color: var(--span-codeColor);
     align-items: center;
     justify-content: center;
     text-align: center;
-    width: 200px;
-    height: 1000px;
+    width: fit-content;
+    height: fit-content;
     white-space: pre-line;
     word-break: normal;
     word-wrap: normal;
+    border: 1px solid var(--border-codeColor);
+    padding: 0 10px;
 }
 
 
@@ -67,9 +72,9 @@ h1 {
     position: fixed;
     top: 0;
     left: 0;
+    width: 400px;
     height: 100%;
     margin: 0 0 20px 0;
-    height: 100%;
     overflow-y: auto;
     overflow-x: hidden;
 }
@@ -103,5 +108,61 @@ a:active {
 /* divider */
 
 .divider {
-    width: 300px;
+    width: 400px;
+}
+
+/* main */
+
+main {
+    max-width: 800px;
+    margin: 30px 0;
+    padding: 10px 40px 0 0;
+    line-height: 1.5;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+}
+
+article {
+    margin: 25px 0;
+}
+
+p {
+    font-size: 1rem;
+}
+
+p code {
+    display: inline;
+    background-color: var(--span-codeColor);
+    border-radius: 3px;
+    padding: 0 3px;
+    border: 1px solid #dddada;
+}
+
+.example {
+    font-weight: 500;
+    margin: 40px 0 5px 0;
+}
+
+section {
+    width: fit-content;
+    height: fit-content;
+}
+
+section pre {
+    background-color: var(--section-codeColor);
+    color: #fff;
+    padding: 0 20px;
+    border-radius: 20px;
+}
+
+section pre code {
+    font-size: 1rem;
+    
+}
+
+#Intrinsic_String_Manipulation_Types code {
+    font-size: 1.2rem;
 }

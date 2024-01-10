@@ -83,57 +83,211 @@
     <main id="main-doc">
         <section class="main-section" id="Awaited">
             <header><code>Awaited&lt;Type&gt;</code></header>
+            <article>
+                <p>This type is meant to model operations like <code>await</code> in <code>async</code> functions, or the <code>then()</code> method on <code>Promises</code> - specifically, the way that they recursively unwrap <code>Promises</code>.</p>
+                <p class="example">example</p>
+                <section>
+                    <pre>
+                        <code>
+const http = require('node:http');
+const hostname = '127.0.0.1';
+const port = 3000;
+const server = http.createServer((req, res) => {
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'text/plain');
+    res.end('Hello World\n');
+});
+server.listen(port, hostname, () => {
+    console.log(`Server running at http://${hostname}:${port}/`);
+});
+                        </code>
+                    </pre>
+                    </section>
+            </article>
         </section>
         <section class="main-section" id="Partial">
             <header><code>Partial&lt;Type&gt;</code></header>
+            <article>
+                <p></p>
+                <section>
+                    <pre>
+                        <code></code>
+                    </pre>
+                </section>
+            </article>
         </section>
         <section class="main-section" id="Required">
             <header><code>Required&lt;Type&gt;</code></header>
+            <article>
+                <p></p>
+                <section>
+                    <pre>
+                        <code></code>
+                    </pre>
+                </section>
+            </article>
         </section>
         <section class="main-section" id="Readonly">
             <header><code>Readonly&lt;Type&gt;</code></header>
+            <article>
+                <p></p>
+                <section>
+                    <pre>
+                        <code></code>
+                    </pre>
+                </section>
+            </article>
         </section>
         <section class="main-section" id="Record">
             <header><code>Record&lt;Keys, Type&gt;</code></header>
+            <article>
+                <p></p>
+                <section>
+                    <pre>
+                        <code></code>
+                    </pre>
+                </section>
+            </article>
         </section>
         <section class="main-section" id="Pick">
             <header><code>Pick&lt;Type, Keys&gt;</code></header>
+            <article>
+                <p></p>
+                <section>
+                    <pre>
+                        <code></code>
+                    </pre>
+                </section>
+            </article>
         </section>
         <section class="main-section" id="Omit">
             <header><code>Omit&lt;Type, Keys&gt;</code></header>
+            <article>
+                <p></p>
+                <section>
+                    <pre>
+                        <code></code>
+                    </pre>
+                </section>
+            </article>
         </section>
         <section class="main-section" id="Exclude">
             <header><code>Exclude&lt;UnionType, ExcludedMembers&gt;</code></header>
+            <article>
+                <p></p>
+                <section>
+                    <pre>
+                        <code></code>
+                    </pre>
+                </section>
+            </article>
         </section>
         <section class="main-section" id="Extract">
             <header><code>Extract&lt;Type, Union&gt;</code></header>
+            <article>
+                <p></p>
+                <section>
+                    <pre>
+                        <code></code>
+                    </pre>
+                </section>
+            </article>
         </section>
         <section class="main-section" id="NonNullable">
             <header><code>NonNullable&lt;Type&gt;</code></header>
+            <article>
+                <p></p>
+                <section>
+                    <pre>
+                        <code></code>
+                    </pre>
+                </section>
+            </article>
         </section>
         <section class="main-section" id="Parameters">
             <header><code>Parameters&lt;Type&gt;</code></header>
+            <article>
+                <p></p>
+                <section>
+                    <pre>
+                        <code></code>
+                    </pre>
+                </section>
+            </article>
         </section>
         <section class="main-section" id="ConstructorParameters">
             <header><code>ConstructorParameters&lt;Type&gt;</code></header>
+            <article>
+                <p></p>
+                <section>
+                    <pre>
+                        <code></code>
+                    </pre>
+                </section>
+            </article>
         </section>
         <section class="main-section" id="ReturnType">
             <header><code>ReturnType&lt;Type&gt;</code></header>
+            <article>
+                <p></p>
+                <section>
+                    <pre>
+                        <code></code>
+                    </pre>
+                </section>
+            </article>
         </section>
         <section class="main-section" id="InstanceType">
             <header><code>InstanceType&lt;Type&gt;</code></header>
+            <article>
+                <p></p>
+                <section>
+                    <pre>
+                        <code></code>
+                    </pre>
+                </section>
+            </article>
         </section>
         <section class="main-section" id="ThisParameterType">
             <header><code>ThisParameterType&lt;Type&gt;</code></header>
+            <article>
+                <p></p>
+                <section>
+                    <pre>
+                        <code></code>
+                    </pre>
+                </section>
+            </article>
         </section>
         <section class="main-section" id="OmitThisParameter">
             <header><code>OmitThisParameter&lt;Type&gt;</code></header>
+            <article>
+                <p></p>
+                <section>
+                    <pre>
+                        <code></code>
+                    </pre>
+                </section>
+            </article>
         </section>
         <section class="main-section" id="ThisType">
             <header><code>ThisType&lt;Type&gt;</code></header>
+            <article>
+                <p></p>
+                <section>
+                    <pre>
+                        <code></code>
+                    </pre>
+                </section>
+            </article>
         </section>
         <section class="main-section" id="Intrinsic_String_Manipulation_Types">
             <header>Intrinsic String Manipulation Types</header>
+            <header><code>Uppercase&lt;StringType&gt;</code></header>
+            <header><code>Lowercase&lt;StringType&gt;</code></header>
+            <header><code>Capitalize&lt;StringType&gt;</code></header>
+            <header><code>Uncapitalize&lt;StringType&gt;</code></header>
+            <p></p>
         </section>
     </main>
 </body>
