@@ -1,0 +1,38 @@
+/* :root {
+
+} */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background: #fff;
+    max-width: 100vw;
+    min-width: 300px;
+    overflow-x: hidden;
+    text-rendering: optimizeLegibility;
+}
+
+body {
+    font-size: 62.5%;
+    font-family: 'Inter', sans-serif;
+    transition: background-color 0.5s ease;
+}
+
+code {
+    display: flex;
+    border-radius: 10px;
+    background-color: #f7f7f7;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 200px;
+    height: 100px;
+    white-space: pre-line;
+    word-break: normal;
+    word-wrap: normal;
+
+}
