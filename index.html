@@ -86,6 +86,7 @@
     </nav>
     <div class="divider"></div>
     <main id="main-doc">
+
         <section class="main-section" id="Awaited">
             <header><code class="header-code" >Awaited&lt;Type&gt;</code></header>
             <article>
@@ -110,10 +111,12 @@ type C = Awaited&lt;boolean | Promise&lt;number&gt;&gt;;
                     </section>
             </article>
         </section>
+
         <section class="main-section" id="Partial">
             <header><code class="header-code" >Partial&lt;Type&gt;</code></header>
             <article>
-                <p></p>
+                <p>Constructs a type with all properties of <code class="header-code">Type</code> set to optional. This utility will return a type that represents all subsets of a given type.</p>
+                <p class="example">example</p>
                 <section>
                     <pre>
                         <code>
@@ -139,10 +142,12 @@ const todo2 = updateTodo(todo1, {
                 </section>
             </article>
         </section>
+
         <section class="main-section" id="Required">
             <header><code class="header-code" >Required&lt;Type&gt;</code></header>
             <article>
-                <p></p>
+                <p>Constructs a type consisting of all properties of <code class="header-code">Type</code> set to required. The opposite of <span><a class="text-linked" href="#Partial">Partial</a></span>.</p>
+                <p class="example">example</p>
                 <section>
                     <pre>
                         <code>
@@ -161,10 +166,12 @@ in type 'Required&lt;Props&gt;'.</div>
                 </section>
             </article>
         </section>
+
         <section class="main-section" id="Readonly">
             <header><code class="header-code" >Readonly&lt;Type&gt;</code></header>
             <article>
-                <p></p>
+                <p>Constructs a type with all properties of <code class="header-code">Type</code> set to <code class="header-code">readonly</code>, meaning the properties of the constructed type cannot be reassigned.</p>
+                <p class="example">example</p>
                 <section>
                     <pre>
                         <code>
@@ -180,18 +187,24 @@ todo.<span class="wavy">title</span> = "Hello";
 <div class="error">Cannot assign to 'title' because it is a read-only property.</div>
                         </code>
                     </pre>
+                </section>
+                <section>
+                    <p>This utility is useful for representing assignment expressions that will fail at runtime (i.e. when attempting to reassign properties of a <span><a class="text-linked" href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze">frozen object</a></span>).</p>
+                    <p class="example">Object.freeze</p>
                     <pre>
                         <code>
-function freeze&lt;Type&gt;(obj: Type): Readonly&lt;Type&gt;;
+    function freeze&lt;Type&gt;(obj: Type): Readonly&lt;Type&gt;;
                         </code>
                     </pre>
                 </section>
             </article>
         </section>
+
         <section class="main-section" id="Record">
             <header><code class="header-code" >Record&lt;Keys, Type&gt;</code></header>
             <article>
-                <p></p>
+                <p>Constructs an object type whose property keys are <code class="header-code">Keys</code> and whose property values are <code class="header-code">Type</code>. This utility can be used to map the properties of a type to another type.</p>
+                <p class="example">example</p>
                 <section>
                     <pre>
                         <code>
@@ -216,10 +229,12 @@ cats.boris;
                 </section>
             </article>
         </section>
+
         <section class="main-section" id="Pick">
             <header><code class="header-code" >Pick&lt;Type, Keys&gt;</code></header>
             <article>
-                <p></p>
+                <p>Constructs a type by picking the set of properties <code class="header-code">Keys</code> (string literal or union of string literals) from <code class="header-code">Type</code>.</p>
+                <p class="example">example</p>
                 <section>
                     <pre>
                         <code>
@@ -244,10 +259,12 @@ todo;
                 </section>
             </article>
         </section>
+
         <section class="main-section" id="Omit">
             <header><code class="header-code" >Omit&lt;Type, Keys&gt;</code></header>
             <article>
-                <p></p>
+                <p>Constructs a type by picking all properties from <code class="header-code">Type</code> and then removing <code class="header-code">Keys</code> (string literal or union of string literals). The opposite of <span><a class="text-linked" href="#Pick">Pick</a></span>.</p>
+                <p class="example">example</p>
                 <section>
                     <pre>
                         <code>
@@ -285,10 +302,12 @@ todoInfo;
                 </section>
             </article>
         </section>
+
         <section class="main-section" id="Exclude">
             <header><code class="header-code" >Exclude&lt;UnionType, ExcludedMembers&gt;</code></header>
             <article>
-                <p></p>
+                <p>Constructs a type by excluding from <code class="header-code">UnionType</code> all union members that are assignable to <code class="header-code">ExcludedMembers</code>.</p>
+                <p class="example">example</p>
                 <section>
                     <pre>
                         <code>
@@ -322,10 +341,12 @@ type T3 = Exclude&lt;Shape, { kind: "circle" }&gt;
                 </section>
             </article>
         </section>
+
         <section class="main-section" id="Extract">
             <header><code class="header-code" >Extract&lt;Type, Union&gt;</code></header>
             <article>
-                <p></p>
+                <p>Constructs a type by extracting from <code class="header-code">Type</code> all union members that are assignable to <code class="header-code">Union</code>.</p>
+                <p class="example">example</p>
                 <section>
                     <pre>
                         <code>
@@ -352,10 +373,12 @@ type T2 = Extract&lt;Shape, { kind: "circle" }&gt;
                 </section>
             </article>
         </section>
+
         <section class="main-section" id="NonNullable">
             <header><code class="header-code" >NonNullable&lt;Type&gt;</code></header>
             <article>
-                <p></p>
+                <p>Constructs a type by excluding <code class="header-code">null</code> and <code class="header-code">undefined</code> from <code class="header-code">Type</code>.</p>
+                <p class="example">example</p>
                 <section>
                     <pre>
                         <code>
@@ -370,10 +393,13 @@ type T1 = NonNullable&lt;string[] | null | undefined&gt;;
                 </section>
             </article>
         </section>
+
         <section class="main-section" id="Parameters">
             <header><code class="header-code" >Parameters&lt;Type&gt;</code></header>
             <article>
-                <p></p>
+                <p>Constructs a tuple type from the types used in the parameters of a function type <code class="header-code">Type</code>.</p>
+                <p>For overloaded functions, this will be the parameters of the <i>last</i> signature; see <span><a class="text-linked" href="https://www.typescriptlang.org/docs/handbook/2/conditional-types.html#inferring-within-conditional-types">Inferring Within Conditional Types</a></span>.</p>
+                <p class="example">example</p>
                 <section>
                     <pre>
                         <code>
@@ -416,10 +442,12 @@ type T7 = Parameters&lt;Function&gt;;
                 </section>
             </article>
         </section>
+
         <section class="main-section" id="ConstructorParameters">
             <header><code class="header-code" >ConstructorParameters&lt;Type&gt;</code></header>
             <article>
-                <p></p>
+                <p>Constructs a tuple or array type from the types of a constructor function type. It produces a tuple type with all the parameter types (or the type <code class="header-code">never</code> if <code class="header-code">Type</code> is not a function).</p>
+                <p class="example">example</p>
                 <section>
                     <pre>
                         <code>
@@ -453,10 +481,13 @@ type T5 = ConstructorParameters&lt;Function&gt;;
                 </section>
             </article>
         </section>
+
         <section class="main-section" id="ReturnType">
             <header><code class="header-code" >ReturnType&lt;Type&gt;</code></header>
             <article>
-                <p></p>
+                <p>Constructs a type consisting of the return type of function <code class="header-code">Type</code>.</p>
+                <p>For overloaded functions, this will be the return type of the last signature; see <span><a class="text-linked" href="https://www.typescriptlang.org/docs/handbook/2/conditional-types.html#inferring-within-conditional-types">Inferring Within Conditional Types</a></span>.</p>
+                <p class="example">example</p>
                 <section>
                     <pre>
                         <code>
@@ -501,10 +532,12 @@ type T8 = ReturnType&lt;Function&gt;;
                 </section>
             </article>
         </section>
+
         <section class="main-section" id="InstanceType">
             <header><code class="header-code" >InstanceType&lt;Type&gt;</code></header>
             <article>
-                <p></p>
+                <p>Constructs a type consisting of the instance type of a constructor function in <code class="header-code">Type</code>.</p>
+                <p class="example">example</p>
                 <section>
                     <pre>
                         <code>
@@ -538,10 +571,12 @@ Type 'Function' provides no match for the signature 'new
                 </section>
             </article>
         </section>
+
         <section class="main-section" id="ThisParameterType">
             <header><code class="header-code" >ThisParameterType&lt;Type&gt;</code></header>
             <article>
-                <p></p>
+                <p>Extracts the type of the <span><a class="text-linked" href="https://www.typescriptlang.org/docs/handbook/functions.html#this-parameters"></a></span>this parameter for a function type, or <span><a class="text-linked" href="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-0.html#new-unknown-top-type">unknown</a></span> if the function type has no <code class="header-code">this</code> parameter.</p>
+                <p class="example">example</p>
                 <section>
                     <pre>
                         <code>
@@ -557,10 +592,12 @@ function numberToString(n: ThisParameterType&lt;typeof toHex&gt;) {
                 </section>
             </article>
         </section>
+
         <section class="main-section" id="OmitThisParameter">
             <header><code class="header-code" >OmitThisParameter&lt;Type&gt;</code></header>
             <article>
-                <p></p>
+                <p>Removes the <span><a class="text-linked" href="https://www.typescriptlang.org/docs/handbook/functions.html#this-parameters">this</a></span> parameter from <code class="header-code">Type</code>. If <code class="header-code">Type</code> has no explicitly declared <code class="header-code">this</code> parameter, the result is simply <code class="header-code">Type</code>. Otherwise, a new function type with no <code class="header-code">this</code> parameter is created from <code class="header-code">Type</code>. Generics are erased and only the last overload signature is propagated into the new function type.</p>
+                <p class="example">example</p>
                 <section>
                     <pre>
                         <code>
@@ -576,11 +613,13 @@ console.log(fiveToHex());
                 </section>
             </article>
         </section>
+
         <section class="main-section" id="ThisType">
             <header><code class="header-code" >ThisType&lt;Type&gt;</code></header>
             <article>
-                <p></p>
+                <p>This utility does not return a transformed type. Instead, it serves as a marker for a contextual <span><a class="text-linked" href="https://www.typescriptlang.org/docs/handbook/functions.html#this"></a></span>this type. Note that the <span><a class="text-linked" href="https://www.typescriptlang.org/tsconfig#noImplicitThis"></a></span>noImplicitThis flag must be enabled to use this utility.</p>
                 <section>
+                    <p class="example">example</p>
                     <pre>
                         <code>
 type ObjectDescriptor&lt;D, M&gt; = {
@@ -609,6 +648,10 @@ obj.y = 20;
 obj.moveBy(5, 5);
                         </code>
                     </pre>
+                </section>
+                <section>
+                    <p>In the example above, the <code class="header-code">methods</code> object in the argument to <code class="header-code">makeObject</code> has a contextual type that includes <code class="header-code">ThisType&lt;D & M&gt;</code> and therefore the type of <span><a class="text-linked" href="https://www.typescriptlang.org/docs/handbook/functions.html#this"></a>this</span> in methods within the <code class="header-code">methods</code> object is <code class="header-code">{ x: number, y: number } & { moveBy(dx: number, dy: number): void }</code>. Notice how the type of the methods property simultaneously is an inference target and a source for the <code class="header-code">this</code> type in methods.</p>
+                    <p>The <code class="header-code">ThisType&lt;T&gt;</code> marker interface is simply an empty interface declared in <code class="header-code">lib.d.ts</code>. Beyond being recognized in the contextual type of an object literal, the interface acts like any empty interface.</p>
                 </section>
             </article>
         </section>

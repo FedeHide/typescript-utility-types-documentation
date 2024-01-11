@@ -103,7 +103,7 @@ li {
     font-size: 1.2rem;
 }
 
-a {
+li a {
     display: block;
     padding: 10px 30px;
     text-decoration: none;
@@ -155,6 +155,7 @@ article {
 
 p {
     font-size: 1rem;
+    margin-left: 15px;
 }
 
 p code {
@@ -167,7 +168,7 @@ p code {
 
 .example {
     font-weight: 500;
-    margin: 40px 0 5px 0;
+    margin: 40px 0 25px 15px;
 }
 
 section {
@@ -216,7 +217,13 @@ section pre {
 .wavy {
     
     text-decoration:underline wavy red;
-    text-underline-offset: 4px;
+    text-underline-offset: 4px;   
+}
+
+.text-linked {
+    padding: 4px;
+    color: var(--link-fontLight);
+    text-decoration: none;
     
 }
 
