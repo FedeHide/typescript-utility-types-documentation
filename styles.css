@@ -423,6 +423,10 @@ body.active {
 
 @media screen and (max-width: 925px) {
 
+    main {
+        max-width: unset;
+    }
+
     .release-box {
         display: none;
     }
