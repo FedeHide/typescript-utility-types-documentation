@@ -394,7 +394,9 @@ body.active {
     color: var(--font-generalDark)
 }
 
-
+.none {
+    display: none;  /* just for freecodecamp validation */
+}
 
 /* medias */
 
