@@ -94,17 +94,17 @@
                 <section>
                     <pre>
                         <code>
-                            const http = require('node:http');
-const hostname = '127.0.0.1';
-const port = 3000;
-const server = http.createServer((req, res) => {
-    res.statusCode = 200;
-    res.setHeader('Content-Type', 'text/plain');
-    res.end('Hello World\n');
-});
-server.listen(port, hostname, () => {
-    console.log(`Server running at http://${hostname}:${port}/`);
-});
+type A = Awaited&lt;Promise&lt;string&gt;&gt;;
+
+<div class="info">type A = string</div>
+    
+type B = Awaited&lt;Promise&lt;Promise&lt;number&gt;&gt;&gt;;
+    
+<div class="info">type B = number</div>
+    
+type C = Awaited&lt;boolean | Promise&lt;number&gt;&gt;;
+
+<div class="info">type C = number | boolean</div>
                         </code>
                     </pre>
                     </section>
@@ -116,7 +116,25 @@ server.listen(port, hostname, () => {
                 <p></p>
                 <section>
                     <pre>
-                        <code></code>
+                        <code>
+interface Todo {
+    title: string;
+    description: string;
+}
+    
+function updateTodo(todo: Todo, fieldsToUpdate: Partial&lt;Todo&gt;) {
+    return { ...todo, ...fieldsToUpdate };
+}
+    
+const todo1 = {
+    title: "organize desk",
+    description: "clear clutter",
+};
+    
+const todo2 = updateTodo(todo1, {
+    description: "throw out trash",
+});
+                        </code>
                     </pre>
                 </section>
             </article>
@@ -127,7 +145,18 @@ server.listen(port, hostname, () => {
                 <p></p>
                 <section>
                     <pre>
-                        <code></code>
+                        <code>
+interface Props {
+    a?: number;
+    b?: string;
+}
+    
+const obj: Props = { a: 5 };
+    
+const <span class="wavy">obj2</span>: Required&lt;Props&gt; = { a: 5 };
+<div class="error">Property 'b' is missing in type '{ a: number; }' but required 
+in type 'Required&lt;Props&gt;'.</div>
+                        </code>
                     </pre>
                 </section>
             </article>
@@ -138,7 +167,23 @@ server.listen(port, hostname, () => {
                 <p></p>
                 <section>
                     <pre>
-                        <code></code>
+                        <code>
+interface Todo {
+    title: string;
+}
+    
+const todo: Readonly&lt;Todo&gt; = {
+    title: "Delete inactive users",
+};
+    
+todo.<span class="wavy">title</span> = "Hello";
+<div class="error">Cannot assign to 'title' because it is a read-only property.</div>
+                        </code>
+                    </pre>
+                    <pre>
+                        <code>
+function freeze&lt;Type&gt;(obj: Type): Readonly&lt;Type&gt;;
+                        </code>
                     </pre>
                 </section>
             </article>
@@ -149,7 +194,24 @@ server.listen(port, hostname, () => {
                 <p></p>
                 <section>
                     <pre>
-                        <code></code>
+                        <code>
+interface CatInfo {
+    age: number;
+    breed: string;
+}
+    
+type CatName = "miffy" | "boris" | "mordred";
+    
+const cats: Record&lt;CatName, CatInfo&gt; = {
+    miffy: { age: 10, breed: "Persian" },
+    boris: { age: 5, breed: "Maine Coon" },
+    mordred: { age: 16, breed: "British Shorthair" },
+};
+    
+cats.boris;
+    
+<div class="info">const cats: Record&lt;CatName, CatInfo&gt;</div>
+                        </code>
                     </pre>
                 </section>
             </article>
@@ -160,7 +222,24 @@ server.listen(port, hostname, () => {
                 <p></p>
                 <section>
                     <pre>
-                        <code></code>
+                        <code>
+interface Todo {
+    title: string;
+    description: string;
+    completed: boolean;
+}
+    
+type TodoPreview = Pick&lt;Todo, "title" | "completed"&gt;;
+    
+const todo: TodoPreview = {
+    title: "Clean room",
+    completed: false,
+};
+    
+todo;
+    
+<div class="info">const todo: TodoPreview</div>
+                        </code>
                     </pre>
                 </section>
             </article>
@@ -171,7 +250,37 @@ server.listen(port, hostname, () => {
                 <p></p>
                 <section>
                     <pre>
-                        <code></code>
+                        <code>
+interface Todo {
+    title: string;
+    description: string;
+    completed: boolean;
+    createdAt: number;
+}
+    
+type TodoPreview = Omit&lt;Todo, "description"&gt;;
+    
+const todo: TodoPreview = {
+    title: "Clean room",
+    completed: false,
+    createdAt: 1615544252770,
+};
+    
+todo;
+    
+<div class="info">const todo: TodoPreview</div>
+    
+type TodoInfo = Omit&lt;Todo, "completed" | "createdAt"&gt;;
+    
+const todoInfo: TodoInfo = {
+    title: "Pick up kids",
+    description: "Kindergarten closes at 5pm",
+};
+    
+todoInfo;
+        
+<div class="info">const todoInfo: TodoInfo</div>
+                        </code>
                     </pre>
                 </section>
             </article>
@@ -182,7 +291,33 @@ server.listen(port, hostname, () => {
                 <p></p>
                 <section>
                     <pre>
-                        <code></code>
+                        <code>
+type T0 = Exclude&lt;"a" | "b" | "c", "a"&gt;;
+
+<div class="info">type T0 = "b" | "c"</div>
+type T1 = Exclude&lt;"a" | "b" | "c", "a" | "b"&gt;;
+        
+<div class="info">type T1 = "c"</div>
+type T2 = Exclude&lt;string | number | (() =&gt; void), Function&gt;;
+        
+<div class="info">type T2 = string | number</div>
+    
+type Shape =
+    | { kind: "circle"; radius: number }
+    | { kind: "square"; x: number }
+    | { kind: "triangle"; x: number; y: number };
+    
+type T3 = Exclude&lt;Shape, { kind: "circle" }&gt;
+        
+<div class="info">type T3 = {
+    kind: "square";
+    x: number;
+} | {
+    kind: "triangle";
+    x: number;
+    y: number;</div>
+}
+                        </code>
                     </pre>
                 </section>
             </article>
@@ -193,7 +328,26 @@ server.listen(port, hostname, () => {
                 <p></p>
                 <section>
                     <pre>
-                        <code></code>
+                        <code>
+type T0 = Extract&lt;"a" | "b" | "c", "a" | "f"&gt;;
+
+<div class="info">type T0 = "a"</div>
+type T1 = Extract&lt;string | number | (() =&gt; void), Function&gt;;
+
+<div class="info">type T1 = () =&gt; void</div>
+
+type Shape =
+    | { kind: "circle"; radius: number }
+    | { kind: "square"; x: number }
+    | { kind: "triangle"; x: number; y: number };
+
+type T2 = Extract&lt;Shape, { kind: "circle" }&gt;
+
+<div class="info">type T2 = {
+    kind: "circle";
+    radius: number;
+}</div>
+                        </code>
                     </pre>
                 </section>
             </article>
@@ -204,7 +358,14 @@ server.listen(port, hostname, () => {
                 <p></p>
                 <section>
                     <pre>
-                        <code></code>
+                        <code>
+type T0 = NonNullable&lt;string | number | undefined&gt;;
+
+<div class="info">type T0 = string | number</div>
+type T1 = NonNullable&lt;string[] | null | undefined&gt;;
+
+<div class="info">type T1 = string[]</div>
+                        </code>
                     </pre>
                 </section>
             </article>
@@ -215,7 +376,42 @@ server.listen(port, hostname, () => {
                 <p></p>
                 <section>
                     <pre>
-                        <code></code>
+                        <code>
+declare function f1(arg: { a: number; b: string }): void;
+
+type T0 = Parameters&lt;() =&gt; string&gt;;
+        
+<div class="info">type T0 = []</div>
+type T1 = Parameters&lt;(s: string) =&gt; void&gt;;
+        
+<div class="info">type T1 = [s: string]</div>
+type T2 = Parameters&lt;&lt;T&gt;(arg: T) =&gt; T&gt;;
+        
+<div class="info">type T2 = [arg: unknown]</div>
+type T3 = Parameters&lt;typeof f1&gt;;
+        
+<div class="info">type T3 = [arg: {
+    a: number;
+    b: string;
+}]</div>
+type T4 = Parameters&lt;any&gt;;
+        
+<div class="info">type T4 = unknown[]</div>
+type T5 = Parameters&lt;never&gt;;
+        
+<div class="info">type T5 = never</div>
+type T6 = Parameters&lt;string&gt;;
+<div class="error">Type 'string' does not satisfy the constraint 
+'(...args: any)=&gt; any'.</div>
+        
+<div class="info">type T6 = never</div>
+type T7 = Parameters&lt;Function&gt;;
+<div class="error">Type 'Function' does not satisfy the constraint 
+'(...args: any) =&gt; any'.
+    Type 'Function' provides no match for the signature 
+'(...args: any): any'.</div>   
+<div class="info">type T7 = never</div>
+                        </code>
                     </pre>
                 </section>
             </article>
@@ -226,7 +422,33 @@ server.listen(port, hostname, () => {
                 <p></p>
                 <section>
                     <pre>
-                        <code></code>
+                        <code>
+type T0 = ConstructorParameters&lt;ErrorConstructor&gt;;
+    
+<div class="info">type T0 = [message?: string]</div>
+type T1 = ConstructorParameters&lt;FunctionConstructor&gt;;
+        
+<div class="info">type T1 = string[]</div>
+type T2 = ConstructorParameters&lt;RegExpConstructor&gt;;
+        
+<div class="info">type T2 = [pattern: string | RegExp, flags?: string]</div>
+class C {
+    constructor(a: number, b: string) {}
+}
+type T3 = ConstructorParameters&lt;typeof C&gt;;
+        
+<div class="info">type T3 = [a: number, b: string]</div>
+type T4 = ConstructorParameters&lt;any&gt;;
+        
+<div class="info">type T4 = unknown[]</div>
+    
+type T5 = ConstructorParameters&lt;Function&gt;;
+<div class="error">Type 'Function' does not satisfy the constraint 'abstract new 
+(...args: any) =&gt; any'.
+    Type 'Function' provides no match for the signature 'new
+(...args: any): any'.</div>
+<div class="info">type T5 = never</div>
+                        </code>
                     </pre>
                 </section>
             </article>
@@ -237,7 +459,44 @@ server.listen(port, hostname, () => {
                 <p></p>
                 <section>
                     <pre>
-                        <code></code>
+                        <code>
+declare function f1(): { a: number; b: string };
+
+type T0 = ReturnType&lt;() =&gt; string&gt;;
+        
+<div class="info">type T0 = string</div>
+type T1 = ReturnType&lt;(s: string) =&gt; void&gt;;
+        
+<div class="info">type T1 = void</div>
+type T2 = ReturnType&lt;&lt;T&gt;() =&gt; T&gt;;
+        
+<div class="info">type T2 = unknown</div>
+type T3 = ReturnType&lt;&lt;T extends U, U extends number[]&gt;() =&gt; T&gt;;
+        
+<div class="info">type T3 = number[]</div>
+type T4 = ReturnType&lt;typeof f1&gt;;
+        
+<div class="info">type T4 = {
+    a: number;
+    b: string;
+}</div>
+type T5 = ReturnType&lt;any&gt;;
+        
+<div class="info">type T5 = any</div>
+type T6 = ReturnType&lt;never&gt;;
+        
+<div class="info">type T6 = never</div>
+type T7 = ReturnType&lt;string&gt;;
+<div class="error">Type 'string' does not satisfy the constraint 
+'(...args: any) =&gt; any'.</div>
+<div class="info">type T7 = any</div>
+type T8 = ReturnType&lt;Function&gt;;
+<div class="error">Type 'Function' does not satisfy the constraint 
+'(...args: any) =&gt; any'.
+    Type 'Function' provides no match for the signature
+'(...args: any): any'.</div>
+<div class="info">type T8 = any</div>
+                        </code>
                     </pre>
                 </section>
             </article>
@@ -248,7 +507,33 @@ server.listen(port, hostname, () => {
                 <p></p>
                 <section>
                     <pre>
-                        <code></code>
+                        <code>
+class C {
+    x = 0;
+    y = 0;
+}
+    
+type T0 = InstanceType&lt;typeof C&gt;;
+    
+<div class="info">type T0 = C</div>
+type T1 = InstanceType&lt;any&gt;;
+    
+<div class="info">type T1 = any</div>
+type T2 = InstanceType&lt;never&gt;;
+    
+<div class="info">type T2 = never</div>
+type T3 = InstanceType&lt;string&gt;;
+<div class="error">Type 'string' does not satisfy the constraint 'abstract new
+(...args: any) =&gt; any'.</div>
+    
+<div class="info">type T3 = any</div>
+type T4 = InstanceType&lt;Function&gt;;
+<div class="error">Type 'Function' does not satisfy the constraint 'abstract new
+(...args: any) =&gt; any'.
+Type 'Function' provides no match for the signature 'new
+(...args: any): any'.</div>
+<div class="info">type T4 = any</div>
+                        </code>
                     </pre>
                 </section>
             </article>
@@ -259,7 +544,15 @@ server.listen(port, hostname, () => {
                 <p></p>
                 <section>
                     <pre>
-                        <code></code>
+                        <code>
+function toHex(this: Number) {
+    return this.toString(16);
+}
+    
+function numberToString(n: ThisParameterType&lt;typeof toHex&gt;) {
+    return toHex.apply(n);
+}
+                        </code>
                     </pre>
                 </section>
             </article>
@@ -270,7 +563,15 @@ server.listen(port, hostname, () => {
                 <p></p>
                 <section>
                     <pre>
-                        <code></code>
+                        <code>
+function toHex(this: Number) {
+    return this.toString(16);
+}
+    
+const fiveToHex: OmitThisParameter&lt;typeof toHex&gt; = toHex.bind(5);
+    
+console.log(fiveToHex());
+                        </code>
                     </pre>
                 </section>
             </article>
@@ -281,7 +582,32 @@ server.listen(port, hostname, () => {
                 <p></p>
                 <section>
                     <pre>
-                        <code></code>
+                        <code>
+type ObjectDescriptor&lt;D, M&gt; = {
+    data?: D;
+    methods?: M & ThisType&lt;D & M&gt;; // Type of 'this' in methods is D & M
+};
+    
+function makeObject&lt;D, M&gt;(desc: ObjectDescriptor&lt;D, M&gt;): D & M {
+    let data: object = desc.data || {};
+    let methods: object = desc.methods || {};
+    return { ...data, ...methods } as D & M;
+}
+    
+let obj = makeObject({
+    data: { x: 0, y: 0 },
+    methods: {
+        moveBy(dx: number, dy: number) {
+            this.x += dx; // Strongly typed this
+            this.y += dy; // Strongly typed this
+        },  
+    },
+});
+    
+obj.x = 10;
+obj.y = 20;
+obj.moveBy(5, 5);
+                        </code>
                     </pre>
                 </section>
             </article>
