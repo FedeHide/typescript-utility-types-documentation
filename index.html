@@ -94,7 +94,7 @@
                     <p>This type is meant to model operations like <code class="header-code">await</code> in <code class="header-code">async</code> functions, or the <code class="header-code">then()</code> method on <code class="header-code">Promises</code> - specifically, the way that they recursively unwrap <code class="header-code">Promises</code>.</p>
                     <div class="release-box">
                         <p>Released:</p>
-                        <p><a class="release" href="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-5.html#the-awaited-type-and-promise-improvements">4.5</a></p>
+                        <p><a class="release" target="_blank" href="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-5.html#the-awaited-type-and-promise-improvements">4.5</a></p>
                     </div>
                 </div>
                 <p class="example">example</p>
@@ -125,7 +125,7 @@ type C = Awaited&lt;boolean | Promise&lt;number&gt;&gt;;
                     <p>Constructs a type with all properties of <code class="header-code">Type</code> set to optional. This utility will return a type that represents all subsets of a given type.</p>
                     <div class="release-box">
                         <p>Released:</p>
-                        <p><a class="release" href="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-1.html#partial-readonly-record-and-pick">2.1</a></p>
+                        <p><a class="release" target="_blank" href="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-1.html#partial-readonly-record-and-pick">2.1</a></p>
                     </div>
                 </div>
                 <p class="example">example</p>
@@ -162,7 +162,7 @@ const todo2 = updateTodo(todo1, {
                     <p>Constructs a type consisting of all properties of <code class="header-code">Type</code> set to required. The opposite of <span><a class="text-linked" href="#Partial">Partial</a></span>.</p>
                     <div class="release-box">
                         <p>Released:</p>
-                        <p><a class="release" href="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-8.html#improved-control-over-mapped-type-modifiers">2.8</a></p>
+                        <p><a class="release" target="_blank" href="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-8.html#improved-control-over-mapped-type-modifiers">2.8</a></p>
                     </div>
                 </div>
                 <p class="example">example</p>
@@ -192,7 +192,7 @@ in type 'Required&lt;Props&gt;'.</div>
                     <p>Constructs a type with all properties of <code class="header-code">Type</code> set to <code class="header-code">readonly</code>, meaning the properties of the constructed type cannot be reassigned.</p>
                     <div class="release-box">
                         <p>Released:</p>
-                        <p><a class="release" href="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-1.html#partial-readonly-record-and-pick">2.1</a></p>
+                        <p><a class="release" target="_blank" href="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-1.html#partial-readonly-record-and-pick">2.1</a></p>
                     </div>
                 </div>
                 <p class="example">example</p>
@@ -213,7 +213,7 @@ todo.<span class="wavy">title</span> = "Hello";
                     </pre>
                 </section>
                 <section>
-                    <p>This utility is useful for representing assignment expressions that will fail at runtime (i.e. when attempting to reassign properties of a <span><a class="text-linked" href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze">frozen object</a></span>).</p>
+                    <p>This utility is useful for representing assignment expressions that will fail at runtime (i.e. when attempting to reassign properties of a <span><a class="text-linked" target="_blank" href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze">frozen object</a></span>).</p>
                     <p class="example">Object.freeze</p>
                     <pre>
                         <code>
@@ -231,7 +231,7 @@ todo.<span class="wavy">title</span> = "Hello";
                     <p>Constructs an object type whose property keys are <code class="header-code">Keys</code> and whose property values are <code class="header-code">Type</code>. This utility can be used to map the properties of a type to another type.</p>
                     <div class="release-box">
                         <p>Released:</p>
-                        <p><a class="release" href="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-1.html#partial-readonly-record-and-pick">2.1</a></p>
+                        <p><a class="release" target="_blank" href="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-1.html#partial-readonly-record-and-pick">2.1</a></p>
                     </div>
                 </div>
                 <p class="example">example</p>
@@ -267,7 +267,7 @@ cats.boris;
                     <p>Constructs a type by picking the set of properties <code class="header-code">Keys</code> (string literal or union of string literals) from <code class="header-code">Type</code>.</p>
                     <div class="release-box">
                         <p>Released:</p>
-                        <p><a class="release" href="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-1.html#partial-readonly-record-and-pick">2.1</a></p>
+                        <p><a class="release" target="_blank" href="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-1.html#partial-readonly-record-and-pick">2.1</a></p>
                     </div>
                 </div>
                 <p class="example">example</p>
@@ -303,7 +303,7 @@ todo;
                     <p>Constructs a type by picking all properties from <code class="header-code">Type</code> and then removing <code class="header-code">Keys</code> (string literal or union of string literals). The opposite of <span><a class="text-linked" href="#Pick">Pick</a></span>.</p>
                     <div class="release-box">
                         <p>Released:</p>
-                        <p><a class="release" href="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-5.html#the-omit-helper-type">3.5</a></p>
+                        <p><a class="release" target="_blank" href="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-5.html#the-omit-helper-type">3.5</a></p>
                     </div>
                 </div>
                 <p class="example">example</p>
@@ -352,7 +352,7 @@ todoInfo;
                     <p>Constructs a type by excluding from <code class="header-code">UnionType</code> all union members that are assignable to <code class="header-code">ExcludedMembers</code>.</p>
                     <div class="release-box">
                         <p>Released:</p>
-                        <p><a class="release" href="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-8.html#predefined-conditional-types">2.8</a></p>
+                        <p><a class="release" target="_blank" href="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-8.html#predefined-conditional-types">2.8</a></p>
                     </div>
                 </div>
                 <p class="example">example</p>
@@ -397,7 +397,7 @@ type T3 = Exclude&lt;Shape, { kind: "circle" }&gt;
                     <p>Constructs a type by extracting from <code class="header-code">Type</code> all union members that are assignable to <code class="header-code">Union</code>.</p>
                     <div class="release-box">
                         <p>Released:</p>
-                        <p><a class="release" href="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-8.html#predefined-conditional-types">2.8</a></p>
+                        <p><a class="release" target="_blank" href="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-8.html#predefined-conditional-types">2.8</a></p>
                     </div>
                 </div>
                 <p class="example">example</p>
@@ -435,7 +435,7 @@ type T2 = Extract&lt;Shape, { kind: "circle" }&gt;
                     <p>Constructs a type by excluding <code class="header-code">null</code> and <code class="header-code">undefined</code> from <code class="header-code">Type</code>.</p>
                     <div class="release-box">
                         <p>Released:</p>
-                        <p><a class="release" href="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-8.html#predefined-conditional-types">2.8</a></p>
+                        <p><a class="release" target="_blank" href="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-8.html#predefined-conditional-types">2.8</a></p>
                     </div>
                 </div>
                 <p class="example">example</p>
@@ -459,10 +459,10 @@ type T1 = NonNullable&lt;string[] | null | undefined&gt;;
             <article>
                 <div>
                     <p>Constructs a tuple type from the types used in the parameters of a function type <code class="header-code">Type</code>.</p>
-                    <p>For overloaded functions, this will be the parameters of the <i>last</i> signature; see <span><a class="text-linked" href="https://www.typescriptlang.org/docs/handbook/2/conditional-types.html#inferring-within-conditional-types">Inferring Within Conditional Types</a></span>.</p>
+                    <p>For overloaded functions, this will be the parameters of the <i>last</i> signature; see <span><a class="text-linked" target="_blank" href="https://www.typescriptlang.org/docs/handbook/2/conditional-types.html#inferring-within-conditional-types">Inferring Within Conditional Types</a></span>.</p>
                     <div class="release-box">
                         <p>Released:</p>
-                        <p><a class="release" href="https://github.com/microsoft/TypeScript/pull/26243">3.1</a></p>
+                        <p><a class="release" target="_blank" href="https://github.com/microsoft/TypeScript/pull/26243">3.1</a></p>
                     </div>
                 </div>
                 <p class="example">example</p>
@@ -516,7 +516,7 @@ type T7 = Parameters&lt;Function&gt;;
                     <p>Constructs a tuple or array type from the types of a constructor function type. It produces a tuple type with all the parameter types (or the type <code class="header-code">never</code> if <code class="header-code">Type</code> is not a function).</p>
                     <div class="release-box">
                         <p>Released:</p>
-                        <p><a class="release" href="https://github.com/microsoft/TypeScript/pull/26243">3.1</a></p>
+                        <p><a class="release" target="_blank" href="https://github.com/microsoft/TypeScript/pull/26243">3.1</a></p>
                     </div>
                 </div>
                 <p class="example">example</p>
@@ -559,10 +559,10 @@ type T5 = ConstructorParameters&lt;Function&gt;;
             <article>
                 <div>
                     <p>Constructs a type consisting of the return type of function <code class="header-code">Type</code>.</p>
-                    <p>For overloaded functions, this will be the return type of the last signature; see <span><a class="text-linked" href="https://www.typescriptlang.org/docs/handbook/2/conditional-types.html#inferring-within-conditional-types">Inferring Within Conditional Types</a></span>.</p>
+                    <p>For overloaded functions, this will be the return type of the last signature; see <span><a class="text-linked" target="_blank" href="https://www.typescriptlang.org/docs/handbook/2/conditional-types.html#inferring-within-conditional-types">Inferring Within Conditional Types</a></span>.</p>
                     <div class="release-box">
                         <p>Released:</p>
-                        <p><a class="release" href="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-8.html#predefined-conditional-types">2.8</a></p>
+                        <p><a class="release" target="_blank" href="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-8.html#predefined-conditional-types">2.8</a></p>
                     </div>
                 </div>
                 <p class="example">example</p>
@@ -618,7 +618,7 @@ type T8 = ReturnType&lt;Function&gt;;
                     <p>Constructs a type consisting of the instance type of a constructor function in <code class="header-code">Type</code>.</p>
                     <div class="release-box">
                         <p>Released:</p>
-                        <p><a class="release" href="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-8.html#predefined-conditional-types">2.8</a></p>
+                        <p><a class="release" target="_blank" href="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-8.html#predefined-conditional-types">2.8</a></p>
                     </div>
                 </div>
                 <p class="example">example</p>
@@ -659,7 +659,13 @@ Type 'Function' provides no match for the signature 'new
         <section class="main-section" id="ThisParameterType">
             <header><code class="header-code" >ThisParameterType&lt;Type&gt;</code></header>
             <article>
-                <p>Extracts the type of the <span><a class="text-linked" href="https://www.typescriptlang.org/docs/handbook/functions.html#this-parameters"></a></span>this parameter for a function type, or <span><a class="text-linked" href="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-0.html#new-unknown-top-type">unknown</a></span> if the function type has no <code class="header-code">this</code> parameter.</p>
+                <div>
+                    <p>Extracts the type of the <span><a class="text-linked" target="_blank" href="https://www.typescriptlang.org/docs/handbook/functions.html#this-parameters"></a></span>this parameter for a function type, or <span><a class="text-linked" target="_blank" href="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-0.html#new-unknown-top-type">unknown</a></span> if the function type has no <code class="header-code">this</code> parameter.</p>
+                    <div class="release-box">
+                        <p>Released:</p>
+                        <p><a class="release" target="_blank" href="https://github.com/microsoft/TypeScript/pull/28920">3.3</a></p>
+                    </div>
+                </div>
                 <p class="example">example</p>
                 <section>
                     <pre>
@@ -680,7 +686,13 @@ function numberToString(n: ThisParameterType&lt;typeof toHex&gt;) {
         <section class="main-section" id="OmitThisParameter">
             <header><code class="header-code" >OmitThisParameter&lt;Type&gt;</code></header>
             <article>
-                <p>Removes the <span><a class="text-linked" href="https://www.typescriptlang.org/docs/handbook/functions.html#this-parameters">this</a></span> parameter from <code class="header-code">Type</code>. If <code class="header-code">Type</code> has no explicitly declared <code class="header-code">this</code> parameter, the result is simply <code class="header-code">Type</code>. Otherwise, a new function type with no <code class="header-code">this</code> parameter is created from <code class="header-code">Type</code>. Generics are erased and only the last overload signature is propagated into the new function type.</p>
+                <div>
+                    <p>Removes the <span><a class="text-linked" target="_blank" href="https://www.typescriptlang.org/docs/handbook/functions.html#this-parameters">this</a></span> parameter from <code class="header-code">Type</code>. If <code class="header-code">Type</code> has no explicitly declared <code class="header-code">this</code> parameter, the result is simply <code class="header-code">Type</code>. Otherwise, a new function type with no <code class="header-code">this</code> parameter is created from <code class="header-code">Type</code>. Generics are erased and only the last overload signature is propagated into the new function type.</p>
+                    <div class="release-box">
+                        <p>Released:</p>
+                        <p><a class="release" target="_blank" href="https://github.com/microsoft/TypeScript/pull/28920">3.3</a></p>
+                    </div>
+                </div>
                 <p class="example">example</p>
                 <section>
                     <pre>
@@ -701,7 +713,13 @@ console.log(fiveToHex());
         <section class="main-section" id="ThisType">
             <header><code class="header-code" >ThisType&lt;Type&gt;</code></header>
             <article>
-                <p>This utility does not return a transformed type. Instead, it serves as a marker for a contextual <span><a class="text-linked" href="https://www.typescriptlang.org/docs/handbook/functions.html#this"></a></span>this type. Note that the <span><a class="text-linked" href="https://www.typescriptlang.org/tsconfig#noImplicitThis"></a></span>noImplicitThis flag must be enabled to use this utility.</p>
+                <div>
+                    <p>This utility does not return a transformed type. Instead, it serves as a marker for a contextual <span><a class="text-linked" target="_blank" href="https://www.typescriptlang.org/docs/handbook/functions.html#this"></a></span>this type. Note that the <span><a class="text-linked" target="_blank" href="https://www.typescriptlang.org/tsconfig#noImplicitThis"></a></span>noImplicitThis flag must be enabled to use this utility.</p>
+                    <div class="release-box">
+                        <p>Released:</p>
+                        <p><a class="release" target="_blank" href="https://github.com/microsoft/TypeScript/pull/14141">2.3</a></p>
+                    </div>
+                </div>
                 <section>
                     <p class="example">example</p>
                     <pre>
@@ -734,7 +752,7 @@ obj.moveBy(5, 5);
                     </pre>
                 </section>
                 <section>
-                    <p>In the example above, the <code class="header-code">methods</code> object in the argument to <code class="header-code">makeObject</code> has a contextual type that includes <code class="header-code">ThisType&lt;D & M&gt;</code> and therefore the type of <span><a class="text-linked" href="https://www.typescriptlang.org/docs/handbook/functions.html#this"></a>this</span> in methods within the <code class="header-code">methods</code> object is <code class="header-code">{ x: number, y: number } & { moveBy(dx: number, dy: number): void }</code>. Notice how the type of the methods property simultaneously is an inference target and a source for the <code class="header-code">this</code> type in methods.</p>
+                    <p>In the example above, the <code class="header-code">methods</code> object in the argument to <code class="header-code">makeObject</code> has a contextual type that includes <code class="header-code">ThisType&lt;D & M&gt;</code> and therefore the type of <span><a class="text-linked" target="_blank" href="https://www.typescriptlang.org/docs/handbook/functions.html#this"></a>this</span> in methods within the <code class="header-code">methods</code> object is <code class="header-code">{ x: number, y: number } & { moveBy(dx: number, dy: number): void }</code>. Notice how the type of the methods property simultaneously is an inference target and a source for the <code class="header-code">this</code> type in methods.</p>
                     <p>The <code class="header-code">ThisType&lt;T&gt;</code> marker interface is simply an empty interface declared in <code class="header-code">lib.d.ts</code>. Beyond being recognized in the contextual type of an object literal, the interface acts like any empty interface.</p>
                 </section>
             </article>
@@ -745,7 +763,7 @@ obj.moveBy(5, 5);
             <header><code class="header-code last" >Lowercase&lt;StringType&gt;</code></header>
             <header><code class="header-code last" >Capitalize&lt;StringType&gt;</code></header>
             <header><code class="header-code last" >Uncapitalize&lt;StringType&gt;</code></header>
-            <p></p>
+            <p>To help with string manipulation around template string literals, TypeScript includes a set of types which can be used in string manipulation within the type system. You can find those in the <span><a class="text-linked" target="_blank" href="https://www.typescriptlang.org/docs/handbook/utility-types.html#intrinsic-string-manipulation-types">Template Literal Types</a></span> documentation.</p>
         </section>
     </main>
     <div id="darkmode-container">
