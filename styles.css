@@ -7,6 +7,7 @@
     --border-codeError: #ff9f9f;
     --link-hoverBgColor: #43853d;
     --link-selectedBgColor: #026e00;
+    --link-releaseColor: #719af4;
     /* light mode */
     --background-light: #fff;
     --link-fontLight: #43853d;
@@ -153,6 +154,35 @@ article {
     margin: 25px 0;
 }
 
+.main-section article div {
+    display: flex;
+}
+
+.release-box {
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--span-codeColor);
+    border: 1px solid var(--border-codeColor);
+    border-radius: 10px;
+    padding: 10px 25px;
+}
+
+.release-box p {
+    font-size: 0.8rem;
+    margin-left: 0;
+}
+
+.release-box p a{
+    color: var(--link-releaseColor);
+}
+
+.release-box p a:hover {
+    color: var(--link-selectedBgColor);
+    background-color: unset;
+}
+
 p {
     font-size: 1rem;
     margin-left: 15px;
@@ -285,7 +315,8 @@ body.active {
     color: var(--link-fontDark);
 }
 
-.header-code.active {
+.header-code.active,
+.release-box.active {
     background-color: var(--headerCode-bgcolor);
     color: var(--font-generalDark)
 }

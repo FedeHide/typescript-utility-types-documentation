@@ -90,7 +90,13 @@
         <section class="main-section" id="Awaited">
             <header><code class="header-code" >Awaited&lt;Type&gt;</code></header>
             <article>
-                <p>This type is meant to model operations like <code class="header-code">await</code> in <code class="header-code">async</code> functions, or the <code class="header-code">then()</code> method on <code class="header-code">Promises</code> - specifically, the way that they recursively unwrap <code class="header-code">Promises</code>.</p>
+                <div>
+                    <p>This type is meant to model operations like <code class="header-code">await</code> in <code class="header-code">async</code> functions, or the <code class="header-code">then()</code> method on <code class="header-code">Promises</code> - specifically, the way that they recursively unwrap <code class="header-code">Promises</code>.</p>
+                    <div class="release-box">
+                        <p>Released:</p>
+                        <p><a class="release" href="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-5.html#the-awaited-type-and-promise-improvements">4.5</a></p>
+                    </div>
+                </div>
                 <p class="example">example</p>
                 <section>
                     <pre>
@@ -115,7 +121,13 @@ type C = Awaited&lt;boolean | Promise&lt;number&gt;&gt;;
         <section class="main-section" id="Partial">
             <header><code class="header-code" >Partial&lt;Type&gt;</code></header>
             <article>
-                <p>Constructs a type with all properties of <code class="header-code">Type</code> set to optional. This utility will return a type that represents all subsets of a given type.</p>
+                <div>
+                    <p>Constructs a type with all properties of <code class="header-code">Type</code> set to optional. This utility will return a type that represents all subsets of a given type.</p>
+                    <div class="release-box">
+                        <p>Released:</p>
+                        <p><a class="release" href="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-1.html#partial-readonly-record-and-pick">2.1</a></p>
+                    </div>
+                </div>
                 <p class="example">example</p>
                 <section>
                     <pre>
@@ -146,7 +158,13 @@ const todo2 = updateTodo(todo1, {
         <section class="main-section" id="Required">
             <header><code class="header-code" >Required&lt;Type&gt;</code></header>
             <article>
-                <p>Constructs a type consisting of all properties of <code class="header-code">Type</code> set to required. The opposite of <span><a class="text-linked" href="#Partial">Partial</a></span>.</p>
+                <div>
+                    <p>Constructs a type consisting of all properties of <code class="header-code">Type</code> set to required. The opposite of <span><a class="text-linked" href="#Partial">Partial</a></span>.</p>
+                    <div class="release-box">
+                        <p>Released:</p>
+                        <p><a class="release" href="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-8.html#improved-control-over-mapped-type-modifiers">2.8</a></p>
+                    </div>
+                </div>
                 <p class="example">example</p>
                 <section>
                     <pre>
@@ -170,7 +188,13 @@ in type 'Required&lt;Props&gt;'.</div>
         <section class="main-section" id="Readonly">
             <header><code class="header-code" >Readonly&lt;Type&gt;</code></header>
             <article>
-                <p>Constructs a type with all properties of <code class="header-code">Type</code> set to <code class="header-code">readonly</code>, meaning the properties of the constructed type cannot be reassigned.</p>
+                <div>
+                    <p>Constructs a type with all properties of <code class="header-code">Type</code> set to <code class="header-code">readonly</code>, meaning the properties of the constructed type cannot be reassigned.</p>
+                    <div class="release-box">
+                        <p>Released:</p>
+                        <p><a class="release" href="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-1.html#partial-readonly-record-and-pick">2.1</a></p>
+                    </div>
+                </div>
                 <p class="example">example</p>
                 <section>
                     <pre>
@@ -203,7 +227,13 @@ todo.<span class="wavy">title</span> = "Hello";
         <section class="main-section" id="Record">
             <header><code class="header-code" >Record&lt;Keys, Type&gt;</code></header>
             <article>
-                <p>Constructs an object type whose property keys are <code class="header-code">Keys</code> and whose property values are <code class="header-code">Type</code>. This utility can be used to map the properties of a type to another type.</p>
+                <div>
+                    <p>Constructs an object type whose property keys are <code class="header-code">Keys</code> and whose property values are <code class="header-code">Type</code>. This utility can be used to map the properties of a type to another type.</p>
+                    <div class="release-box">
+                        <p>Released:</p>
+                        <p><a class="release" href="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-1.html#partial-readonly-record-and-pick">2.1</a></p>
+                    </div>
+                </div>
                 <p class="example">example</p>
                 <section>
                     <pre>
@@ -233,7 +263,13 @@ cats.boris;
         <section class="main-section" id="Pick">
             <header><code class="header-code" >Pick&lt;Type, Keys&gt;</code></header>
             <article>
-                <p>Constructs a type by picking the set of properties <code class="header-code">Keys</code> (string literal or union of string literals) from <code class="header-code">Type</code>.</p>
+                <div>
+                    <p>Constructs a type by picking the set of properties <code class="header-code">Keys</code> (string literal or union of string literals) from <code class="header-code">Type</code>.</p>
+                    <div class="release-box">
+                        <p>Released:</p>
+                        <p><a class="release" href="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-1.html#partial-readonly-record-and-pick">2.1</a></p>
+                    </div>
+                </div>
                 <p class="example">example</p>
                 <section>
                     <pre>
@@ -263,7 +299,13 @@ todo;
         <section class="main-section" id="Omit">
             <header><code class="header-code" >Omit&lt;Type, Keys&gt;</code></header>
             <article>
-                <p>Constructs a type by picking all properties from <code class="header-code">Type</code> and then removing <code class="header-code">Keys</code> (string literal or union of string literals). The opposite of <span><a class="text-linked" href="#Pick">Pick</a></span>.</p>
+                <div>
+                    <p>Constructs a type by picking all properties from <code class="header-code">Type</code> and then removing <code class="header-code">Keys</code> (string literal or union of string literals). The opposite of <span><a class="text-linked" href="#Pick">Pick</a></span>.</p>
+                    <div class="release-box">
+                        <p>Released:</p>
+                        <p><a class="release" href="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-5.html#the-omit-helper-type">3.5</a></p>
+                    </div>
+                </div>
                 <p class="example">example</p>
                 <section>
                     <pre>
@@ -306,7 +348,13 @@ todoInfo;
         <section class="main-section" id="Exclude">
             <header><code class="header-code" >Exclude&lt;UnionType, ExcludedMembers&gt;</code></header>
             <article>
-                <p>Constructs a type by excluding from <code class="header-code">UnionType</code> all union members that are assignable to <code class="header-code">ExcludedMembers</code>.</p>
+                <div>
+                    <p>Constructs a type by excluding from <code class="header-code">UnionType</code> all union members that are assignable to <code class="header-code">ExcludedMembers</code>.</p>
+                    <div class="release-box">
+                        <p>Released:</p>
+                        <p><a class="release" href="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-8.html#predefined-conditional-types">2.8</a></p>
+                    </div>
+                </div>
                 <p class="example">example</p>
                 <section>
                     <pre>
@@ -345,7 +393,13 @@ type T3 = Exclude&lt;Shape, { kind: "circle" }&gt;
         <section class="main-section" id="Extract">
             <header><code class="header-code" >Extract&lt;Type, Union&gt;</code></header>
             <article>
-                <p>Constructs a type by extracting from <code class="header-code">Type</code> all union members that are assignable to <code class="header-code">Union</code>.</p>
+                <div>
+                    <p>Constructs a type by extracting from <code class="header-code">Type</code> all union members that are assignable to <code class="header-code">Union</code>.</p>
+                    <div class="release-box">
+                        <p>Released:</p>
+                        <p><a class="release" href="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-8.html#predefined-conditional-types">2.8</a></p>
+                    </div>
+                </div>
                 <p class="example">example</p>
                 <section>
                     <pre>
@@ -377,7 +431,13 @@ type T2 = Extract&lt;Shape, { kind: "circle" }&gt;
         <section class="main-section" id="NonNullable">
             <header><code class="header-code" >NonNullable&lt;Type&gt;</code></header>
             <article>
-                <p>Constructs a type by excluding <code class="header-code">null</code> and <code class="header-code">undefined</code> from <code class="header-code">Type</code>.</p>
+                <div>
+                    <p>Constructs a type by excluding <code class="header-code">null</code> and <code class="header-code">undefined</code> from <code class="header-code">Type</code>.</p>
+                    <div class="release-box">
+                        <p>Released:</p>
+                        <p><a class="release" href="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-8.html#predefined-conditional-types">2.8</a></p>
+                    </div>
+                </div>
                 <p class="example">example</p>
                 <section>
                     <pre>
@@ -397,8 +457,14 @@ type T1 = NonNullable&lt;string[] | null | undefined&gt;;
         <section class="main-section" id="Parameters">
             <header><code class="header-code" >Parameters&lt;Type&gt;</code></header>
             <article>
-                <p>Constructs a tuple type from the types used in the parameters of a function type <code class="header-code">Type</code>.</p>
-                <p>For overloaded functions, this will be the parameters of the <i>last</i> signature; see <span><a class="text-linked" href="https://www.typescriptlang.org/docs/handbook/2/conditional-types.html#inferring-within-conditional-types">Inferring Within Conditional Types</a></span>.</p>
+                <div>
+                    <p>Constructs a tuple type from the types used in the parameters of a function type <code class="header-code">Type</code>.</p>
+                    <p>For overloaded functions, this will be the parameters of the <i>last</i> signature; see <span><a class="text-linked" href="https://www.typescriptlang.org/docs/handbook/2/conditional-types.html#inferring-within-conditional-types">Inferring Within Conditional Types</a></span>.</p>
+                    <div class="release-box">
+                        <p>Released:</p>
+                        <p><a class="release" href="https://github.com/microsoft/TypeScript/pull/26243">3.1</a></p>
+                    </div>
+                </div>
                 <p class="example">example</p>
                 <section>
                     <pre>
@@ -446,7 +512,13 @@ type T7 = Parameters&lt;Function&gt;;
         <section class="main-section" id="ConstructorParameters">
             <header><code class="header-code" >ConstructorParameters&lt;Type&gt;</code></header>
             <article>
-                <p>Constructs a tuple or array type from the types of a constructor function type. It produces a tuple type with all the parameter types (or the type <code class="header-code">never</code> if <code class="header-code">Type</code> is not a function).</p>
+                <div>
+                    <p>Constructs a tuple or array type from the types of a constructor function type. It produces a tuple type with all the parameter types (or the type <code class="header-code">never</code> if <code class="header-code">Type</code> is not a function).</p>
+                    <div class="release-box">
+                        <p>Released:</p>
+                        <p><a class="release" href="https://github.com/microsoft/TypeScript/pull/26243">3.1</a></p>
+                    </div>
+                </div>
                 <p class="example">example</p>
                 <section>
                     <pre>
@@ -485,8 +557,14 @@ type T5 = ConstructorParameters&lt;Function&gt;;
         <section class="main-section" id="ReturnType">
             <header><code class="header-code" >ReturnType&lt;Type&gt;</code></header>
             <article>
-                <p>Constructs a type consisting of the return type of function <code class="header-code">Type</code>.</p>
-                <p>For overloaded functions, this will be the return type of the last signature; see <span><a class="text-linked" href="https://www.typescriptlang.org/docs/handbook/2/conditional-types.html#inferring-within-conditional-types">Inferring Within Conditional Types</a></span>.</p>
+                <div>
+                    <p>Constructs a type consisting of the return type of function <code class="header-code">Type</code>.</p>
+                    <p>For overloaded functions, this will be the return type of the last signature; see <span><a class="text-linked" href="https://www.typescriptlang.org/docs/handbook/2/conditional-types.html#inferring-within-conditional-types">Inferring Within Conditional Types</a></span>.</p>
+                    <div class="release-box">
+                        <p>Released:</p>
+                        <p><a class="release" href="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-8.html#predefined-conditional-types">2.8</a></p>
+                    </div>
+                </div>
                 <p class="example">example</p>
                 <section>
                     <pre>
@@ -536,7 +614,13 @@ type T8 = ReturnType&lt;Function&gt;;
         <section class="main-section" id="InstanceType">
             <header><code class="header-code" >InstanceType&lt;Type&gt;</code></header>
             <article>
-                <p>Constructs a type consisting of the instance type of a constructor function in <code class="header-code">Type</code>.</p>
+                <div>
+                    <p>Constructs a type consisting of the instance type of a constructor function in <code class="header-code">Type</code>.</p>
+                    <div class="release-box">
+                        <p>Released:</p>
+                        <p><a class="release" href="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-8.html#predefined-conditional-types">2.8</a></p>
+                    </div>
+                </div>
                 <p class="example">example</p>
                 <section>
                     <pre>
