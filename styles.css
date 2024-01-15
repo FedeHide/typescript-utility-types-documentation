@@ -30,6 +30,7 @@ html {
     min-width: 600px;
     overflow-x: hidden;
     text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
 }
 
 .grid-container {
@@ -355,7 +356,7 @@ pre {
 #darkmode-container svg {
     position: absolute;
     width: 24px;
-    top: -380px;
+    top: 5px;
     z-index: 100;
 }
 
@@ -396,6 +397,36 @@ body.active {
 
 .none {
     display: none;  /* just for freecodecamp validation */
+}
+
+/* back to top btn */
+
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--link-fontLight);
+    text-decoration: none;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    transition: 0.2s ease-out;
+}
+
+.back-to-top span {
+    color: var(--background-codeError);
+    font-size: 3vw;
+    transition: 0.2s ease-out;
+}
+
+.back-to-top:hover {
+    background-color: var(--link-selectedBgColor);
+}
+
+.back-to-top:hover span {
+    transform: translateY(-4px);
 }
 
 /* medias */
