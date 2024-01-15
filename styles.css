@@ -504,3 +504,17 @@ body.active {
         margin-bottom: 20px;
     }
 }
+
+@media only screen and (hover: none) {
+    .back-to-top:hover {
+        background-color: var(--link-fontLight); /* Cambia el color de fondo al mismo que el estado normal */
+    }
+
+    .back-to-top:hover span {
+        transform: translateY(0); /* Anula la transformación en dispositivos táctiles */
+    }
+
+    .back-to-top:active {
+        background-color: var(--link-selectedBgColor); 
+    }
+}
