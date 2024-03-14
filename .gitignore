@@ -6,7 +6,7 @@ NOTES.md
 
 # dependencies
 /node_modules
-pnpm-lock.yaml
+
 /.pnp
 .pnp.js
 .yarn/install-state.gz
