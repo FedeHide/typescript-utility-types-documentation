@@ -1,0 +1,31 @@
+*.md
+*LICENSE
+/node_modules
+
+# sass
+.sass-cache/
+*.css.map
+*.sass.map
+*.scss.map
+
+# typescript
+*.js.map
+
+Awaited.tsx
+Partial.tsx
+required.tsx
+Readonly.tsx
+Record.tsx
+Pick.tsx
+Omit.tsx
+Exclude.tsx
+Extract.tsx
+NonNullable.tsx
+Parameters.tsx
+ConstructorParameters.tsx
+ReturnType.tsx
+InstanceType.tsx
+ThisParameterType.tsx
+OmitThisParameter.tsx
+ThisType.tsx
+Intrinsic.tsx
