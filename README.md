@@ -1,6 +1,6 @@
 # Typescript (utility types) Documentation | freeCodeCamp
 
-### Check the site [Here](https://fedehide.github.io/typescript-utility-types-documentation/ " Typescript (utility types) documentation")
+### Check the site [Here](https://typescript-utility-types-documentation.vercel.app/ " Typescript (utility types) documentation")
 
 ------------
 
