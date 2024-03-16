@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 	title: 'TypeScript Utility Types',
 	description: 'This is a fake documentation website, a freecodecamp assignment',
 	openGraph: {
-		url: 'https://fedehide.github.io/typescript-utility-types-documentation/',
+		url: 'https://typescript-utility-types-documentation.vercel.app/',
 		type: 'website',
 		title: 'TypeScript Utility Types',
 		description: 'This is a fake documentation website, a freecodecamp assignment',
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 	},
 	twitter: {
 		card: 'summary_large_image',
-		site: 'https://fedehide.github.io/typescript-utility-types-documentation/',
+		site: 'https://typescript-utility-types-documentation.vercel.app/',
 	},
 }
 
