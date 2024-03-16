@@ -1,9 +1,9 @@
 'use client'
 
-import { useCssClass } from '@/hooks/useCssClass'
+import { useNavSelection } from '@/hooks/useNavSelection'
 
 export default function Navbar(): JSX.Element {
-	const [cssClass, addCssClass] = useCssClass(0)
+	const [activeClass, addActiveClass] = useNavSelection(0)
 	return (
 		<nav id="navbar">
 			<div className="header-container">
@@ -37,9 +37,9 @@ export default function Navbar(): JSX.Element {
 					<a
 						href="#Awaited"
 						onClick={() => {
-							addCssClass(1)
+							addActiveClass(1)
 						}}
-						className={`nav-link ${cssClass === 1 ? 'selected' : ''}`}
+						className={`nav-link ${activeClass === 1 ? 'selected' : ''}`}
 					>
 						Awaited
 					</a>
@@ -48,9 +48,9 @@ export default function Navbar(): JSX.Element {
 					<a
 						href="#Partial"
 						onClick={() => {
-							addCssClass(2)
+							addActiveClass(2)
 						}}
-						className={`nav-link ${cssClass === 2 ? 'selected' : ''}`}
+						className={`nav-link ${activeClass === 2 ? 'selected' : ''}`}
 					>
 						Partial
 					</a>
@@ -59,9 +59,9 @@ export default function Navbar(): JSX.Element {
 					<a
 						href="#Required"
 						onClick={() => {
-							addCssClass(3)
+							addActiveClass(3)
 						}}
-						className={`nav-link ${cssClass === 3 ? 'selected' : ''}`}
+						className={`nav-link ${activeClass === 3 ? 'selected' : ''}`}
 					>
 						Required
 					</a>
@@ -70,9 +70,9 @@ export default function Navbar(): JSX.Element {
 					<a
 						href="#Readonly"
 						onClick={() => {
-							addCssClass(4)
+							addActiveClass(4)
 						}}
-						className={`nav-link ${cssClass === 4 ? 'selected' : ''}`}
+						className={`nav-link ${activeClass === 4 ? 'selected' : ''}`}
 					>
 						Readonly
 					</a>
@@ -81,9 +81,9 @@ export default function Navbar(): JSX.Element {
 					<a
 						href="#Record"
 						onClick={() => {
-							addCssClass(5)
+							addActiveClass(5)
 						}}
-						className={`nav-link ${cssClass === 5 ? 'selected' : ''}`}
+						className={`nav-link ${activeClass === 5 ? 'selected' : ''}`}
 					>
 						Record
 					</a>
@@ -92,9 +92,9 @@ export default function Navbar(): JSX.Element {
 					<a
 						href="#Pick"
 						onClick={() => {
-							addCssClass(6)
+							addActiveClass(6)
 						}}
-						className={`nav-link ${cssClass === 6 ? 'selected' : ''}`}
+						className={`nav-link ${activeClass === 6 ? 'selected' : ''}`}
 					>
 						Pick
 					</a>
@@ -103,9 +103,9 @@ export default function Navbar(): JSX.Element {
 					<a
 						href="#Omit"
 						onClick={() => {
-							addCssClass(7)
+							addActiveClass(7)
 						}}
-						className={`nav-link ${cssClass === 7 ? 'selected' : ''}`}
+						className={`nav-link ${activeClass === 7 ? 'selected' : ''}`}
 					>
 						Omit
 					</a>
@@ -114,9 +114,9 @@ export default function Navbar(): JSX.Element {
 					<a
 						href="#Exclude"
 						onClick={() => {
-							addCssClass(8)
+							addActiveClass(8)
 						}}
-						className={`nav-link ${cssClass === 8 ? 'selected' : ''}`}
+						className={`nav-link ${activeClass === 8 ? 'selected' : ''}`}
 					>
 						Exclude
 					</a>
@@ -125,9 +125,9 @@ export default function Navbar(): JSX.Element {
 					<a
 						href="#Extract"
 						onClick={() => {
-							addCssClass(9)
+							addActiveClass(9)
 						}}
-						className={`nav-link ${cssClass === 9 ? 'selected' : ''}`}
+						className={`nav-link ${activeClass === 9 ? 'selected' : ''}`}
 					>
 						Extract
 					</a>
@@ -136,9 +136,9 @@ export default function Navbar(): JSX.Element {
 					<a
 						href="#NonNullable"
 						onClick={() => {
-							addCssClass(10)
+							addActiveClass(10)
 						}}
-						className={`nav-link ${cssClass === 10 ? 'selected' : ''}`}
+						className={`nav-link ${activeClass === 10 ? 'selected' : ''}`}
 					>
 						NonNullable
 					</a>
@@ -147,9 +147,9 @@ export default function Navbar(): JSX.Element {
 					<a
 						href="#Parameters"
 						onClick={() => {
-							addCssClass(11)
+							addActiveClass(11)
 						}}
-						className={`nav-link ${cssClass === 11 ? 'selected' : ''}`}
+						className={`nav-link ${activeClass === 11 ? 'selected' : ''}`}
 					>
 						Parameters
 					</a>
@@ -158,9 +158,9 @@ export default function Navbar(): JSX.Element {
 					<a
 						href="#ConstructorParameters"
 						onClick={() => {
-							addCssClass(12)
+							addActiveClass(12)
 						}}
-						className={`nav-link ${cssClass === 12 ? 'selected' : ''}`}
+						className={`nav-link ${activeClass === 12 ? 'selected' : ''}`}
 					>
 						ConstructorParameters
 					</a>
@@ -169,9 +169,9 @@ export default function Navbar(): JSX.Element {
 					<a
 						href="#ReturnType"
 						onClick={() => {
-							addCssClass(13)
+							addActiveClass(13)
 						}}
-						className={`nav-link ${cssClass === 13 ? 'selected' : ''}`}
+						className={`nav-link ${activeClass === 13 ? 'selected' : ''}`}
 					>
 						ReturnType
 					</a>
@@ -180,9 +180,9 @@ export default function Navbar(): JSX.Element {
 					<a
 						href="#InstanceType"
 						onClick={() => {
-							addCssClass(14)
+							addActiveClass(14)
 						}}
-						className={`nav-link ${cssClass === 14 ? 'selected' : ''}`}
+						className={`nav-link ${activeClass === 14 ? 'selected' : ''}`}
 					>
 						InstanceType
 					</a>
@@ -191,9 +191,9 @@ export default function Navbar(): JSX.Element {
 					<a
 						href="#ThisParameterType"
 						onClick={() => {
-							addCssClass(15)
+							addActiveClass(15)
 						}}
-						className={`nav-link ${cssClass === 15 ? 'selected' : ''}`}
+						className={`nav-link ${activeClass === 15 ? 'selected' : ''}`}
 					>
 						ThisParameterType
 					</a>
@@ -202,9 +202,9 @@ export default function Navbar(): JSX.Element {
 					<a
 						href="#OmitThisParameter"
 						onClick={() => {
-							addCssClass(16)
+							addActiveClass(16)
 						}}
-						className={`nav-link ${cssClass === 16 ? 'selected' : ''}`}
+						className={`nav-link ${activeClass === 16 ? 'selected' : ''}`}
 					>
 						OmitThisParameter
 					</a>
@@ -213,9 +213,9 @@ export default function Navbar(): JSX.Element {
 					<a
 						href="#ThisType"
 						onClick={() => {
-							addCssClass(17)
+							addActiveClass(17)
 						}}
-						className={`nav-link ${cssClass === 17 ? 'selected' : ''}`}
+						className={`nav-link ${activeClass === 17 ? 'selected' : ''}`}
 					>
 						ThisType
 					</a>
@@ -224,9 +224,9 @@ export default function Navbar(): JSX.Element {
 					<a
 						href="#Intrinsic_String_Manipulation_Types"
 						onClick={() => {
-							addCssClass(18)
+							addActiveClass(18)
 						}}
-						className={`nav-link ${cssClass === 18 ? 'selected' : ''}`}
+						className={`nav-link ${activeClass === 18 ? 'selected' : ''}`}
 					>
 						Intrinsic String Manipulation Types
 					</a>
