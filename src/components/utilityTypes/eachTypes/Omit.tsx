@@ -1,16 +1,21 @@
+'use client'
+import { ThemeContext } from "@/app/context/ThemeContext"
+import { useContext } from "react"
+
 export default function Omit(): JSX.Element {
+	const { toggleTheme } = useContext(ThemeContext)
 	return (
 		<section className="main-section" id="Omit">
 			<header className="none">Omit</header>
 			<header>
-				<code className="header-code">{`Omit<Type, Keys>`}</code>
+				<code className={`header-code ${toggleTheme}`}>{`Omit<Type, Keys>`}</code>
 			</header>
 			<article>
 				<div>
 					<p>
 						Constructs a type by picking all properties from{' '}
-						<code className="header-code">Type</code> and then removing{' '}
-						<code className="header-code">Keys</code> (string literal or union of string
+						<code className={`header-code ${toggleTheme}`}>Type</code> and then removing{' '}
+						<code className={`header-code ${toggleTheme}`}>Keys</code> (string literal or union of string
 						literals). The opposite of{' '}
 						<span>
 							<a className="text-linked" href="#Pick">
@@ -19,7 +24,7 @@ export default function Omit(): JSX.Element {
 						</span>
 						.
 					</p>
-					<div className="release-box">
+					<div className={`release-box ${toggleTheme}`}>
 						<p>Released:</p>
 						<p>
 							<a

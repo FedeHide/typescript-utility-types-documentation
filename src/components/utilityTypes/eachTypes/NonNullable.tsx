@@ -1,18 +1,23 @@
+'use client'
+import { ThemeContext } from "@/app/context/ThemeContext"
+import { useContext } from "react"
+
 export default function NonNullable(): JSX.Element {
+	const { toggleTheme } = useContext(ThemeContext)
 	return (
 		<section className="main-section" id="NonNullable">
 			<header className="none">NonNullable</header>
 			<header>
-				<code className="header-code">{`NonNullable<Type>`}</code>
+				<code className={`header-code ${toggleTheme}`}>{`NonNullable<Type>`}</code>
 			</header>
 			<article>
 				<div>
 					<p>
-						Constructs a type by excluding <code className="header-code">null</code> and{' '}
-						<code className="header-code">undefined</code> from{' '}
-						<code className="header-code">Type</code>.
+						Constructs a type by excluding <code className={`header-code ${toggleTheme}`}>null</code> and{' '}
+						<code className={`header-code ${toggleTheme}`}>undefined</code> from{' '}
+						<code className={`header-code ${toggleTheme}`}>Type</code>.
 					</p>
-					<div className="release-box">
+					<div className={`release-box ${toggleTheme}`}>
 						<p>Released:</p>
 						<p>
 							<a

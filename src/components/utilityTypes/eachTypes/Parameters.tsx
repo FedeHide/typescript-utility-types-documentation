@@ -1,17 +1,22 @@
+'use client'
+import { ThemeContext } from "@/app/context/ThemeContext"
+import { useContext } from "react"
+
 export default function Parameters(): JSX.Element {
+	const { toggleTheme } = useContext(ThemeContext)
 	return (
 		<section className="main-section" id="Parameters">
 			<header className="none">Parameters</header>
 			<header>
-				<code className="header-code">{`Parameters<Type>`}</code>
+				<code className={`header-code ${toggleTheme}`}>{`Parameters<Type>`}</code>
 			</header>
 			<article>
 				<div>
 					<p>
 						Constructs a tuple type from the types used in the parameters of a function
-						type <code className="header-code">Type</code>.
+						type <code className={`header-code ${toggleTheme}`}>Type</code>.
 					</p>
-					<div className="release-box">
+					<div className={`release-box ${toggleTheme}`}>
 						<p>Released:</p>
 						<p>
 							<a

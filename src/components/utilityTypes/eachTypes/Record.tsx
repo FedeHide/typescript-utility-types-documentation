@@ -1,19 +1,24 @@
+'use client'
+import { ThemeContext } from "@/app/context/ThemeContext"
+import { useContext } from "react"
+
 export default function Record(): JSX.Element {
+	const { toggleTheme } = useContext(ThemeContext)
 	return (
 		<section className="main-section" id="Record">
 			<header className="none">Record</header>
 			<header>
-				<code className="header-code">{`Record<Keys, Type>`}</code>
+				<code className={`header-code ${toggleTheme}`}>{`Record<Keys, Type>`}</code>
 			</header>
 			<article>
 				<div>
 					<p>
 						Constructs an object type whose property keys are{' '}
-						<code className="header-code">Keys</code> and whose property values are{' '}
-						<code className="header-code">Type</code>. This utility can be used to map
+						<code className={`header-code ${toggleTheme}`}>Keys</code> and whose property values are{' '}
+						<code className={`header-code ${toggleTheme}`}>Type</code>. This utility can be used to map
 						the properties of a type to another type.
 					</p>
-					<div className="release-box">
+					<div className={`release-box ${toggleTheme}`}>
 						<p>Released:</p>
 						<p>
 							<a

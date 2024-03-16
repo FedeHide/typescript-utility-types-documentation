@@ -1,19 +1,24 @@
+'use client'
+import { ThemeContext } from "@/app/context/ThemeContext"
+import { useContext } from "react"
+
 export default function ConstructorParameters(): JSX.Element {
+	const { toggleTheme } = useContext(ThemeContext)
 	return (
 		<section className="main-section" id="ConstructorParameters">
 			<header className="none">ConstructorParameters</header>
 			<header>
-				<code className="header-code">{`ConstructorParameters<Type>`}</code>
+				<code className={`header-code ${toggleTheme}`}>{`ConstructorParameters<Type>`}</code>
 			</header>
 			<article>
 				<div>
 					<p>
 						Constructs a tuple or array type from the types of a constructor function
 						type. It produces a tuple type with all the parameter types (or the type{' '}
-						<code className="header-code">never</code> if{' '}
-						<code className="header-code">Type</code> is not a function).
+						<code className={`header-code ${toggleTheme}`}>never</code> if{' '}
+						<code className={`header-code ${toggleTheme}`}>Type</code> is not a function).
 					</p>
-					<div className="release-box">
+					<div className={`release-box ${toggleTheme}`}>
 						<p>Released:</p>
 						<p>
 							<a

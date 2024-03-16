@@ -1,18 +1,23 @@
+'use client'
+import { ThemeContext } from "@/app/context/ThemeContext"
+import { useContext } from "react"
+
 export default function Partial(): JSX.Element {
+	const { toggleTheme } = useContext(ThemeContext)
 	return (
 		<section className="main-section" id="Partial">
 			<header className="none">Partial</header>
 			<header>
-				<code className="header-code">Partial&lt;Type&gt;</code>
+				<code className={`header-code ${toggleTheme}`}>Partial&lt;Type&gt;</code>
 			</header>
 			<article>
 				<div>
 					<p>
 						Constructs a type with all properties of{' '}
-						<code className="header-code">Type</code> set to optional. This utility will
+						<code className={`header-code ${toggleTheme}`}>Type</code> set to optional. This utility will
 						return a type that represents all subsets of a given type.
 					</p>
-					<div className="release-box">
+					<div className={`release-box ${toggleTheme}`}>
 						<p>Released:</p>
 						<p>
 							<a

@@ -1,4 +1,9 @@
+'use client'
+import { ThemeContext } from "@/app/context/ThemeContext"
+import { useContext } from "react"
+
 export default function Awaited(): JSX.Element {
+	const { toggleTheme } = useContext(ThemeContext)
 	return (
 		<section className="main-section" id="Awaited">
 			<header className="none">Awaited</header>
@@ -11,20 +16,20 @@ export default function Awaited(): JSX.Element {
 			</ul>
 			<div>
 				<header>
-					<code className="header-code">Awaited&lt;Type&gt;</code>
+					<code className={`header-code ${toggleTheme}`}>Awaited&lt;Type&gt;</code>
 				</header>
 			</div>
 			<article>
 				<div>
 					<p>
 						This type is meant to model operations like{' '}
-						<code className="header-code">await</code> in{' '}
-						<code className="header-code">async</code> functions, or the{' '}
-						<code className="header-code">then()</code> method on{' '}
-						<code className="header-code">Promises</code> - specifically, the way that
-						they recursively unwrap <code className="header-code">Promises</code>.
+						<code className={`header-code ${toggleTheme}`}>await</code> in{' '}
+						<code className={`header-code ${toggleTheme}`}>async</code> functions, or the{' '}
+						<code className={`header-code ${toggleTheme}`}>then()</code> method on{' '}
+						<code className={`header-code ${toggleTheme}`}>Promises</code> - specifically, the way that
+						they recursively unwrap <code className={`header-code ${toggleTheme}`}>Promises</code>.
 					</p>
-					<div className="release-box">
+					<div className={`release-box ${toggleTheme}`}>
 						<p>Released:</p>
 						<p>
 							<a

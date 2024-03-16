@@ -1,17 +1,22 @@
+'use client'
+import { ThemeContext } from "@/app/context/ThemeContext"
+import { useContext } from "react"
+
 export default function ReturnType(): JSX.Element {
+	const { toggleTheme } = useContext(ThemeContext)
 	return (
 		<section className="main-section" id="ReturnType">
 			<header className="none">ReturnType</header>
 			<header>
-				<code className="header-code">{`ReturnType<Type>`}</code>
+				<code className={`header-code ${toggleTheme}`}>{`ReturnType<Type>`}</code>
 			</header>
 			<article>
 				<div>
 					<p>
 						Constructs a type consisting of the return type of function{' '}
-						<code className="header-code">Type</code>.
+						<code className={`header-code ${toggleTheme}`}>Type</code>.
 					</p>
-					<div className="release-box">
+					<div className={`release-box ${toggleTheme}`}>
 						<p>Released:</p>
 						<p>
 							<a

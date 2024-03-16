@@ -1,18 +1,22 @@
+'use client'
+import { ThemeContext } from "@/app/context/ThemeContext"
+import { useContext } from "react"
 export default function Extract(): JSX.Element {
+	const { toggleTheme } = useContext(ThemeContext)
 	return (
 		<section className="main-section" id="Extract">
 			<header className="none">Extract</header>
 			<header>
-				<code className="header-code">{`Extract<Type, Union>`}</code>
+				<code className={`header-code ${toggleTheme}`}>{`Extract<Type, Union>`}</code>
 			</header>
 			<article>
 				<div>
 					<p>
 						Constructs a type by extracting from{' '}
-						<code className="header-code">Type</code> all union members that are
-						assignable to <code className="header-code">Union</code>.
+						<code className={`header-code ${toggleTheme}`}>Type</code> all union members that are
+						assignable to <code className={`header-code ${toggleTheme}`}>Union</code>.
 					</p>
-					<div className="release-box">
+					<div className={`release-box ${toggleTheme}`}>
 						<p>Released:</p>
 						<p>
 							<a

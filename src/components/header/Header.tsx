@@ -1,9 +1,14 @@
+'use client'
+import { ThemeContext } from '@/app/context/ThemeContext'
+import { useContext } from 'react'
+
 export default function Header(): JSX.Element {
+	const { toggleTheme, toggleThemeClass } = useContext(ThemeContext)
 	return (
 		<header>
 			<div className="head">
 				<h1>Utility Types</h1>
-				<div className="" id="darkmode-container">
+				<div onClick={toggleThemeClass} className={toggleTheme} id="darkmode-container">
 					<svg
 						className="sun"
 						fill="#000000"

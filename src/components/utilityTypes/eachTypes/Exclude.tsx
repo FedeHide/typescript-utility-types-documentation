@@ -1,18 +1,22 @@
+'use client'
+import { ThemeContext } from "@/app/context/ThemeContext"
+import { useContext } from "react"
 export default function Exclude(): JSX.Element {
+	const { toggleTheme } = useContext(ThemeContext)
 	return (
 		<section className="main-section" id="Exclude">
 			<header className="none">Exclude</header>
 			<header>
-				<code className="header-code">{`Exclude<UnionType, ExcludedMembers>`}</code>
+				<code className={`header-code ${toggleTheme}`}>{`Exclude<UnionType, ExcludedMembers>`}</code>
 			</header>
 			<article>
 				<div>
 					<p>
 						Constructs a type by excluding from{' '}
-						<code className="header-code">UnionType</code> all union members that are
-						assignable to <code className="header-code">ExcludedMembers</code>.
+						<code className={`header-code ${toggleTheme}`}>UnionType</code> all union members that are
+						assignable to <code className={`header-code ${toggleTheme}`}>ExcludedMembers</code>.
 					</p>
-					<div className="release-box">
+					<div className={`release-box ${toggleTheme}`}>
 						<p>Released:</p>
 						<p>
 							<a

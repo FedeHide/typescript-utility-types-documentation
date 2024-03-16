@@ -1,15 +1,20 @@
+'use client'
+import { ThemeContext } from "@/app/context/ThemeContext"
+import { useContext } from "react"
+
 export default function Required(): JSX.Element {
+	const { toggleTheme } = useContext(ThemeContext)
 	return (
 		<section className="main-section" id="Required">
 			<header className="none">Required</header>
 			<header>
-				<code className="header-code">Required&lt;Type&gt;</code>
+				<code className={`header-code ${toggleTheme}`}>Required&lt;Type&gt;</code>
 			</header>
 			<article>
 				<div>
 					<p>
 						Constructs a type consisting of all properties of{' '}
-						<code className="header-code">Type</code> set to required. The opposite of{' '}
+						<code className={`header-code ${toggleTheme}`}>Type</code> set to required. The opposite of{' '}
 						<span>
 							<a className="text-linked" href="#Partial">
 								Partial
@@ -17,7 +22,7 @@ export default function Required(): JSX.Element {
 						</span>
 						.
 					</p>
-					<div className="release-box">
+					<div className={`release-box ${toggleTheme}`}>
 						<p>Released:</p>
 						<p>
 							<a

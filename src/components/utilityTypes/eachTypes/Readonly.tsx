@@ -1,19 +1,24 @@
+'use client'
+import { ThemeContext } from "@/app/context/ThemeContext"
+import { useContext } from "react"
+
 export default function Readonly(): JSX.Element {
+	const { toggleTheme } = useContext(ThemeContext)
 	return (
 		<section className="main-section" id="Readonly">
 			<header className="none">Readonly</header>
 			<header>
-				<code className="header-code">{`Readonly<Type>`}</code>
+				<code className={`header-code ${toggleTheme}`}>{`Readonly<Type>`}</code>
 			</header>
 			<article>
 				<div>
 					<p>
 						Constructs a type with all properties of{' '}
-						<code className="header-code">Type</code> set to{' '}
-						<code className="header-code">readonly</code>, meaning the properties of the
+						<code className={`header-code ${toggleTheme}`}>Type</code> set to{' '}
+						<code className={`header-code ${toggleTheme}`}>readonly</code>, meaning the properties of the
 						constructed type cannot be reassigned.
 					</p>
-					<div className="release-box">
+					<div className={`release-box ${toggleTheme}`}>
 						<p>Released:</p>
 						<p>
 							<a

@@ -1,9 +1,14 @@
+'use client'
+import { ThemeContext } from "@/app/context/ThemeContext"
+import { useContext } from "react"
+
 export default function OmitThisParameter(): JSX.Element {
+	const { toggleTheme } = useContext(ThemeContext)
 	return (
 		<section className="main-section" id="OmitThisParameter">
 			<header className="none">OmitThisParameter</header>
 			<header>
-				<code className="header-code">{`OmitThisParameter<Type>`}</code>
+				<code className={`header-code ${toggleTheme}`}>{`OmitThisParameter<Type>`}</code>
 			</header>
 			<article>
 				<div>
@@ -18,15 +23,15 @@ export default function OmitThisParameter(): JSX.Element {
 								this
 							</a>
 						</span>
-						parameter from <code className="header-code">Type</code>. If{' '}
-						<code className="header-code">Type</code> has no explicitly declared{' '}
-						<code className="header-code">this</code> parameter, the result is simply{' '}
-						<code className="header-code">Type</code>. Otherwise, a new function type
-						with no <code className="header-code">this</code> parameter is created from{' '}
-						<code className="header-code">Type</code>. Generics are erased and only the
+						parameter from <code className={`header-code ${toggleTheme}`}>Type</code>. If{' '}
+						<code className={`header-code ${toggleTheme}`}>Type</code> has no explicitly declared{' '}
+						<code className={`header-code ${toggleTheme}`}>this</code> parameter, the result is simply{' '}
+						<code className={`header-code ${toggleTheme}`}>Type</code>. Otherwise, a new function type
+						with no <code className={`header-code ${toggleTheme}`}>this</code> parameter is created from{' '}
+						<code className={`header-code ${toggleTheme}`}>Type</code>. Generics are erased and only the
 						last overload signature is propagated into the new function type.
 					</p>
-					<div className="release-box">
+					<div className={`release-box ${toggleTheme}`}>
 						<p>Released:</p>
 						<p>
 							<a

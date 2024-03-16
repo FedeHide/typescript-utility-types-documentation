@@ -1,9 +1,14 @@
+'use client'
+import { ThemeContext } from "@/app/context/ThemeContext"
+import { useContext } from "react"
+
 export default function ThisParameterType(): JSX.Element {
+	const { toggleTheme } = useContext(ThemeContext)
 	return (
 		<section className="main-section" id="ThisParameterType">
 			<header className="none">ThisParameterType</header>
 			<header>
-				<code className="header-code">{`ThisParameterType<Type>`}</code>
+				<code className={`header-code ${toggleTheme}`}>{`ThisParameterType<Type>`}</code>
 			</header>
 			<article>
 				<div>
@@ -26,10 +31,10 @@ export default function ThisParameterType(): JSX.Element {
 								unknown
 							</a>
 						</span>
-						if the function type has no <code className="header-code">this</code>{' '}
+						if the function type has no <code className={`header-code ${toggleTheme}`}>this</code>{' '}
 						parameter.
 					</p>
-					<div className="release-box">
+					<div className={`release-box ${toggleTheme}`}>
 						<p>Released:</p>
 						<p>
 							<a

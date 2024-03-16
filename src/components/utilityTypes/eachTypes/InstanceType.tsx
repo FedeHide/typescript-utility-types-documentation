@@ -1,17 +1,22 @@
+'use client'
+import { ThemeContext } from "@/app/context/ThemeContext"
+import { useContext } from "react"
+
 export default function InstanceType(): JSX.Element {
+	const { toggleTheme } = useContext(ThemeContext)
 	return (
 		<section className="main-section" id="InstanceType">
 			<header className="none">InstanceType</header>
 			<header>
-				<code className="header-code">{`InstanceType<Type>`}</code>
+				<code className={`header-code ${toggleTheme}`}>{`InstanceType<Type>`}</code>
 			</header>
 			<article>
 				<div>
 					<p>
 						Constructs a type consisting of the instance type of a constructor function
-						in <code className="header-code">Type</code>.
+						in <code className={`header-code ${toggleTheme}`}>Type</code>.
 					</p>
-					<div className="release-box">
+					<div className={`release-box ${toggleTheme}`}>
 						<p>Released:</p>
 						<p>
 							<a
