@@ -1,4 +1,9 @@
+'use client'
+
+import { useCssClass } from '@/hooks/useCssClass'
+
 export default function Navbar(): JSX.Element {
+	const [cssClass, addCssClass] = useCssClass(0)
 	return (
 		<nav id="navbar">
 			<div className="header-container">
@@ -29,92 +34,200 @@ export default function Navbar(): JSX.Element {
 			</div>
 			<ul>
 				<li>
-					<a href="#Awaited" className="nav-link">
+					<a
+						href="#Awaited"
+						onClick={() => {
+							addCssClass(1)
+						}}
+						className={`nav-link ${cssClass === 1 ? 'selected' : ''}`}
+					>
 						Awaited
 					</a>
 				</li>
 				<li>
-					<a href="#Partial" className="nav-link">
+					<a
+						href="#Partial"
+						onClick={() => {
+							addCssClass(2)
+						}}
+						className={`nav-link ${cssClass === 2 ? 'selected' : ''}`}
+					>
 						Partial
 					</a>
 				</li>
 				<li>
-					<a href="#Required" className="nav-link">
+					<a
+						href="#Required"
+						onClick={() => {
+							addCssClass(3)
+						}}
+						className={`nav-link ${cssClass === 3 ? 'selected' : ''}`}
+					>
 						Required
 					</a>
 				</li>
 				<li>
-					<a href="#Readonly" className="nav-link">
+					<a
+						href="#Readonly"
+						onClick={() => {
+							addCssClass(4)
+						}}
+						className={`nav-link ${cssClass === 4 ? 'selected' : ''}`}
+					>
 						Readonly
 					</a>
 				</li>
 				<li>
-					<a href="#Record" className="nav-link">
+					<a
+						href="#Record"
+						onClick={() => {
+							addCssClass(5)
+						}}
+						className={`nav-link ${cssClass === 5 ? 'selected' : ''}`}
+					>
 						Record
 					</a>
 				</li>
 				<li>
-					<a href="#Pick" className="nav-link">
+					<a
+						href="#Pick"
+						onClick={() => {
+							addCssClass(6)
+						}}
+						className={`nav-link ${cssClass === 6 ? 'selected' : ''}`}
+					>
 						Pick
 					</a>
 				</li>
 				<li>
-					<a href="#Omit" className="nav-link">
+					<a
+						href="#Omit"
+						onClick={() => {
+							addCssClass(7)
+						}}
+						className={`nav-link ${cssClass === 7 ? 'selected' : ''}`}
+					>
 						Omit
 					</a>
 				</li>
 				<li>
-					<a href="#Exclude" className="nav-link">
+					<a
+						href="#Exclude"
+						onClick={() => {
+							addCssClass(8)
+						}}
+						className={`nav-link ${cssClass === 8 ? 'selected' : ''}`}
+					>
 						Exclude
 					</a>
 				</li>
 				<li>
-					<a href="#Extract" className="nav-link">
+					<a
+						href="#Extract"
+						onClick={() => {
+							addCssClass(9)
+						}}
+						className={`nav-link ${cssClass === 9 ? 'selected' : ''}`}
+					>
 						Extract
 					</a>
 				</li>
 				<li>
-					<a href="#NonNullable" className="nav-link">
+					<a
+						href="#NonNullable"
+						onClick={() => {
+							addCssClass(10)
+						}}
+						className={`nav-link ${cssClass === 10 ? 'selected' : ''}`}
+					>
 						NonNullable
 					</a>
 				</li>
 				<li>
-					<a href="#Parameters" className="nav-link">
+					<a
+						href="#Parameters"
+						onClick={() => {
+							addCssClass(11)
+						}}
+						className={`nav-link ${cssClass === 11 ? 'selected' : ''}`}
+					>
 						Parameters
 					</a>
 				</li>
 				<li>
-					<a href="#ConstructorParameters" className="nav-link">
+					<a
+						href="#ConstructorParameters"
+						onClick={() => {
+							addCssClass(12)
+						}}
+						className={`nav-link ${cssClass === 12 ? 'selected' : ''}`}
+					>
 						ConstructorParameters
 					</a>
 				</li>
 				<li>
-					<a href="#ReturnType" className="nav-link">
+					<a
+						href="#ReturnType"
+						onClick={() => {
+							addCssClass(13)
+						}}
+						className={`nav-link ${cssClass === 13 ? 'selected' : ''}`}
+					>
 						ReturnType
 					</a>
 				</li>
 				<li>
-					<a href="#InstanceType" className="nav-link">
+					<a
+						href="#InstanceType"
+						onClick={() => {
+							addCssClass(14)
+						}}
+						className={`nav-link ${cssClass === 14 ? 'selected' : ''}`}
+					>
 						InstanceType
 					</a>
 				</li>
 				<li>
-					<a href="#ThisParameterType" className="nav-link">
+					<a
+						href="#ThisParameterType"
+						onClick={() => {
+							addCssClass(15)
+						}}
+						className={`nav-link ${cssClass === 15 ? 'selected' : ''}`}
+					>
 						ThisParameterType
 					</a>
 				</li>
 				<li>
-					<a href="#OmitThisParameter" className="nav-link">
+					<a
+						href="#OmitThisParameter"
+						onClick={() => {
+							addCssClass(16)
+						}}
+						className={`nav-link ${cssClass === 16 ? 'selected' : ''}`}
+					>
 						OmitThisParameter
 					</a>
 				</li>
 				<li>
-					<a href="#ThisType" className="nav-link">
+					<a
+						href="#ThisType"
+						onClick={() => {
+							addCssClass(17)
+						}}
+						className={`nav-link ${cssClass === 17 ? 'selected' : ''}`}
+					>
 						ThisType
 					</a>
 				</li>
 				<li>
-					<a href="#Intrinsic_String_Manipulation_Types" className="nav-link">
+					<a
+						href="#Intrinsic_String_Manipulation_Types"
+						onClick={() => {
+							addCssClass(18)
+						}}
+						className={`nav-link ${cssClass === 18 ? 'selected' : ''}`}
+					>
 						Intrinsic String Manipulation Types
 					</a>
 				</li>
