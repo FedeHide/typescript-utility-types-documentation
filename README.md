@@ -14,7 +14,7 @@ This project aims to provide comprehensive documentation for utility types in Ty
 
 ------------
 
-[![typescript-utility-types-documentation-darkmode.png](https://i.postimg.cc/vTKbPYHK/typescript-utility-types-documentation-darkmode.png)](https://postimg.cc/SYcBRp9L)
+[![typescript-utility-types-documentation-darkmode.png](https://raw.githubusercontent.com/FedeHide/typescript-utility-types-documentation/main/public/assets/typescript-utility-types-documentation-lightmode.webp)](https://typescript-utility-types-documentation.vercel.app/)
 
 
 > This is a [freecodecamp](http://https://www.freecodecamp.org/learn/ "freecodecamp") assignment. All the projects and contact details given are **not real**.
